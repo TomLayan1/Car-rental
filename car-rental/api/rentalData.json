@@ -8,7 +8,7 @@
     },
     {
       "userImage": "https://cdn.pixabay.com/photo/2022/05/05/01/13/woman-7175038_1280.jpg",
-      "userName": "Abraham Collins",
+      "userName": "Dave Lee",
       "rating": "4",
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst."
     },
@@ -30,5 +30,6 @@
       "rating": "4",
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst."
     }
-  ]
+  ],
+  "bookings": []
 }

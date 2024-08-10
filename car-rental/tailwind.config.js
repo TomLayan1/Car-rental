@@ -14,7 +14,8 @@ module.exports = {
         primaryColor: '#fa7602',
         secondaryColor: '#2B4521',
         grayLight: '#424242',
-        grayBg: '#0000003f'
+        grayBg: '#0000003f',
+        contactBg: '#00000088'
       },
       boxShadow: {
         customShadow: '0 0px 18px rgba(0, 0, 0, 0.6)',

@@ -10,7 +10,6 @@ const RentalContextProvider = (props) => {
 
   // STATE TO SAVE TESTIMOMIAL DATA
   const [testimonial, setTestimonial] = useState([])
-  console.log(testimonial)
 
   // FETCH TESTIMONIAL DATA
   useEffect(() => {
