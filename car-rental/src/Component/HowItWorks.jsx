@@ -7,26 +7,26 @@ import { FaCar } from "react-icons/fa";
 const HowItWorks = () => {
 
   return (
-    <div className='py-8 md:py-11 h-[100vh] md:h-[50vh] overflow-hidde bg-red-900'>
-      <motion.h2
-        initial={{ translateY: 150, opacity: 0 }}
-        whileInView={{ translateY: 0, opacity: 1 }}
-        transition={{ duration: 0.5}}
-        className='text-center text-3xl text-primaryColor font-extrabold mb-14'>How It Works</motion.h2>
+    <div className=' lg:w-[80%] h-[100vh] md:h-[40vh] lg:h-[50vh] mx-auto py-9 lg:py-14'>
+        <motion.h2
+          initial={{ translateY: 200, opacity: 0 }}
+          whileInView={{ translateY: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className='text-center text-3xl md:text-4xl text-primaryColor font-extrabold mb-12'>How It Works</motion.h2>
 
-        <div className='flex flex-col md:flex-row item-center gap-6 w-[90%] m-auto'>
+        <div className='flex flex-col md:flex-row item-center gap-6 m-auto'>
           <motion.div
-            initial={{ translateY: 150, opacity: 0 }}
+            initial={{ translateY: 200, opacity: 0 }}
             whileInView={{ translateY: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
             <FaLocationDot size={32} style={{color: '#fa7602'}} />
-            <h4 className='text-lg text-black font-semibold'>Choose a Location</h4>
+            <h4 className='text-lg text-black text-center font-semibold'>Choose a Location</h4>
             <p className='text-[13px] text-black text-center'>Select your desired pick-up location from our wide network of convenient spots.</p>
           </motion.div>
 
           <motion.div
-            initial={{ translateY: 150, opacity: 0 }}
+            initial={{ translateY: 200, opacity: 0 }}
             whileInView={{ translateY: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
@@ -36,7 +36,7 @@ const HowItWorks = () => {
           </motion.div>
 
           <motion.div
-            initial={{ translateY: 150, opacity: 0 }}
+            initial={{ translateY: 200, opacity: 0 }}
             whileInView={{ translateY: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.9 }}
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>

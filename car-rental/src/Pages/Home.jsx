@@ -12,8 +12,8 @@ const Home = () => {
   const { darkMode } = useContext(RentalContext)
   return (
     <div className={`${darkMode ? 'bg-slate-900 text-white' : 'bg-white text-black'} duration-500`}>
-      <div className='px-10 md:px-24 lg:px-100'>
-        <Hero />
+      <Hero />
+      <div className='px-10 lg:px-110'>
         <HowItWorks />
         <Book />
         <AboutUs />
