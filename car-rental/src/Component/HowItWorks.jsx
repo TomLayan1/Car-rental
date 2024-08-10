@@ -7,7 +7,7 @@ import { FaCar } from "react-icons/fa";
 const HowItWorks = () => {
 
   return (
-    <div className=' lg:w-[80%] h-[100vh] md:h-[40vh] lg:h-[50vh] mx-auto py-9 lg:py-14'>
+    <div className=' lg:w-[80%] mx-auto py-10 lg:py-24'>
         <motion.h2
           initial={{ translateY: 200, opacity: 0 }}
           whileInView={{ translateY: 0, opacity: 1 }}

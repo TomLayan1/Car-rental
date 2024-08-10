@@ -4,7 +4,7 @@ import blackSuv from '../Assets/Images/black-suv.png'
 
 const AboutUs = () => {
   return (
-    <div className='py-16 h-[100vh] overflow-hidden'>
+    <section id='about' className='py-24 overflow-hidden'>
       <motion.h2
         initial={{ translateY: 140, scale: 0.5 }}
         whileInView={{ translateY: 0, scale: 1 }}
@@ -29,7 +29,7 @@ const AboutUs = () => {
           <button className='bg-gradient-to-tr from-orange-600 to-orange-200 flex items-center gap-1 px-8 py-2 text-[13px] text-white rounded-3xl rounded-tr-none'>LEARN MORE</button>
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
 

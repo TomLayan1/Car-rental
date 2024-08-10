@@ -21,12 +21,13 @@ const Book = () => {
 
   
   return (
-    <section id='book' className='h-[100vh] py-4  w-[80%] mx-auto flex flex-col items-center justify-center'>
+    <section id='book' className='w-full lg:w-[90%] mx-auto py-9 md:py-12 lg:py-16'>
 
-      <h1 className='text-3xl text-primaryColor font-bold text-center mb-20'>Book A Car</h1>
+      <h1 className='text-3xl text-primaryColor font-bold text-center mb-4'>Drive Your Dream Today</h1>
+      <p className='text-[15px] text-center mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
 
-      <form className='flex items-center gap-10 flex-wrap text-[15px]'>
-        <div className='w-[30%]'>
+      <form className='text-[15px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8'>
+        <div className=''>
           <div className='flex items-center gap-2  mb-2'>
             <FaCar  size={20} style={{ color: '#fa7602'}} />
             <p>Select car type</p>
@@ -45,7 +46,7 @@ const Book = () => {
           </select>
         </div>
 
-        <div className='w-[30%]'>
+        <div className=''>
           <div className='flex items-center gap-2 mb-2'>
             <FaLocationDot size={20} style={{ color: '#fa7602'}} />
             <p>Pick-up location</p>
@@ -58,7 +59,7 @@ const Book = () => {
           className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0 text-black' />
         </div>
 
-        <div className='w-[30%]'>
+        <div className=''>
           <div className='flex items-center gap-2 mb-2'>
             <FaLocationDot size={20} style={{ color: '#fa7602'}} />
             <p>Drop-off location</p>
@@ -70,7 +71,7 @@ const Book = () => {
           placeholder='Location Here' className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0 text-black' />
         </div>
 
-        <div className='w-[30%]'>
+        <div className=''>
           <div  className='flex items-center gap-2 mb-2'>
             <MdDateRange size={20} style={{ color: '#fa7602'}} />
             <p>Pick-up date</p>
@@ -81,7 +82,7 @@ const Book = () => {
           onChange={handleBooking}
           className='w-full text-[15px] p-2  bg-orange-50 border border-primaryColor outline-0  text-black' />
         </div>
-        <div className='w-[30%]'>
+        <div className=''>
           <div  className='flex items-center gap-2 mb-2'>
             <MdDateRange size={20} style={{ color: '#fa7602'}} />
             <p>Drop-off date</p>
@@ -93,7 +94,7 @@ const Book = () => {
           className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0  text-black' />
         </div>
         
-        <button className='bg-primaryColor w-[30%] py-2 mt-8 text-white'>Submit</button>
+          <button className='bg-primaryColor text-white h-[45px] mt-7'>Submit</button>
       </form>
     </section>
   )

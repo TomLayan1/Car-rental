@@ -13,14 +13,15 @@ const Home = () => {
   return (
     <div className={`${darkMode ? 'bg-slate-900 text-white' : 'bg-white text-black'} duration-500`}>
       <Hero />
-      <div className='px-10 lg:px-110'>
+      <div className='px-6 md:px-16 lg:px-[100px]'>
         <HowItWorks />
         <Book />
         <AboutUs />
-        <MobileApp />
       </div>
       <Testimonial />
-      <div className='px-10 md:px-24 lg:px-100'></div>
+      <div className='px-10 md:px-24 lg:px-100'>
+        <MobileApp />
+      </div>
     </div>
   )
 }

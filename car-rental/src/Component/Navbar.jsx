@@ -27,12 +27,12 @@ const Navbar = () => {
          animate={{ translateY: 0, opacity: 1 }}
          transition={{ duration: 1.5 }}
          className='hidden lg:flex lg:gap-6'>
-          <li className='list-none text-[14px] cursor-pointer'>Home</li>
-          <li className='list-none text-[14px] cursor-pointer'>About</li>
-          <li className='list-none text-[14px] cursor-pointer'>Vehicle Models</li>
-          <li className='list-none text-[14px] cursor-pointer'>Testimonials</li>
-          <li className='list-none text-[14px] cursor-pointer'>Our Team</li>
-          <li className='list-none text-[14px] cursor-pointer'>Contact</li>
+          <a className='list-none text-[14px] cursor-pointer'><li>Home</li></a>
+          <a href='#about' className='list-none text-[14px] cursor-pointer'><li>About Us</li></a>
+          <a className='list-none text-[14px] cursor-pointer'><li>Vehicle Models</li></a>
+          <a href='#testimonials' className='list-none text-[14px] cursor-pointer'><li>Testimonials</li></a>
+          <a className='list-none text-[14px] cursor-pointer'><li>Our Team</li></a>
+          <a className='list-none text-[14px] cursor-pointer'><li>Contact</li></a>
         </motion.nav>
 
         <motion.div
