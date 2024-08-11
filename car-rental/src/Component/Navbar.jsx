@@ -15,12 +15,12 @@ const Navbar = () => {
   return (
     <>
       {showNav && <div onClick={() => setShowNav(false)} className='fixed top-0 left-0 w-full h-[100vh] bg-grayBg'></div>}
-      <div className={`w-full fixed top-0 left-0 z-50 flex items-center justify-between px-[12px] md:px-[30px] lg:px-[100px] py-5 ${darkMode ? 'bg-slate-900 text-white' : 'bg-white text-black'} duration-500`}>
+      <div className={`w-full fixed top-0 left-0 z-50 flex items-center justify-between px-[12px] md:px-[30px] lg:px-[100px] py-5 ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
         <motion.h1
          initial={{ translateY: -50, opacity: 0 }}
          animate={{ translateY: 0, opacity: 1 }}
          transition={{ duration: 1.5 }}
-         className='font-bold text-xl cursor-pointer text-primaryColor'>Drive<span className='font-thin text-grayLight'>Luxury</span></motion.h1>
+         className='font-bold text-2xl cursor-pointer text-primaryColor'>Drive<span className='text-grayLight'>Luxury</span></motion.h1>
 
         <motion.nav
          initial={{ translateY: -50, opacity: 0 }}

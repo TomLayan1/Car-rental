@@ -11,7 +11,7 @@ const Home = () => {
   // FROM CONTEXT
   const { darkMode } = useContext(RentalContext)
   return (
-    <div className={`${darkMode ? 'bg-slate-900 text-white' : 'bg-white text-black'} duration-500`}>
+    <div className={`${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
       <Hero />
       <div className='px-6 md:px-16 lg:px-[100px]'>
         <HowItWorks />
@@ -22,6 +22,7 @@ const Home = () => {
       <div className='px-10 md:px-24 lg:px-100'>
         <MobileApp />
       </div>
+      <hr className='mt-8' />
     </div>
   )
 }

@@ -6,7 +6,7 @@ import appStore from '../Assets/Images/app-store.png'
 
 const MobileApp = () => {
   return (
-    <div className='h-[100vh] flex items-center justify-center'>
+    <div className='hidden h-[100vh] lg:flex items-center justify-center'>
       <motion.div
         initial={{ translateY: 100, scale: 0.5 }}
         whileInView={{ translateY: 0, scale: 1 }}

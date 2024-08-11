@@ -12,16 +12,14 @@ module.exports = {
     extend: {
       colors: {
         primaryColor: '#fa7602',
-        secondaryColor: '#2B4521',
+        darkTheme: '#151515',
         grayLight: '#424242',
         grayBg: '#0000003f',
         contactBg: '#00000088'
       },
       boxShadow: {
         customShadow: '0 0px 18px rgba(0, 0, 0, 0.6)',
-      },
-      buttonShadow: {
-        btnShadow: '0px 1px 10px rgba(12, 80, 39, 0.5)'
+        btnShadow: '0px 1px 10px rgba(12, 80, 39, 0.5)',
       }
   }
 },
