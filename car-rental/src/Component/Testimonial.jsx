@@ -17,12 +17,12 @@ const Testimonial = () => {
   const { testimonial } = useContext(RentalContext);
 
   return (
-    <section id='testimonials' className='bg-orange-10 py-20 px-5 bg-black lg:flex'>
+    <section id='testimonials' className='py-20 lg:py-24 px-5 bg-black lg:flex'>
       <div className='lg:w-[40%] lg:pl-20'>
-        <h2 className='text-3xl font-bold text-primaryColor mb-5'>Testimonials</h2>
-        <p className='text-white text-[14px] mb-10'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh.</p>
+        <h2 className='text-3xl font-bold text-primaryColor mb-5'>What Our Clients Say</h2>
+        <p className='text-white text-[14px] mb-10'>We pride ourselves on delivering exceptional experiences with our luxury vehicle rentals. But don’t just take our word for it. Hear what our satisfied clients have to say.</p>
       </div>
-      <div className='w-full lg:w-[40%]  bg-white mx-auto shadow-customShadow'>
+      <div className='w-full lg:w-[40%]  bg-white border border-primaryColor rounded-xl mx-auto shadow-customShadow'>
         <Swiper
           modules={[Pagination, Autoplay]}
           loop={true}
@@ -44,7 +44,7 @@ const Testimonial = () => {
                       <img className='w-full h-full rounded-full' src={testimonial.userImage} alt={testimonial.userName} />
                     </div>
                     <div>
-                      <h3 className='test-2xl font-bold mb-2'>{testimonial.userName}</h3>
+                      <h3 className='test-2xl font-bold mb-2 text-black'>{testimonial.userName}</h3>
                       <div className='text-primaryColor flex'>
                         <IoStar size={20} />
                         <IoStar size={20} />
@@ -56,16 +56,16 @@ const Testimonial = () => {
                   </div>
                   <div className='py-8 w-[95%] mx-auto'>
                     <p className='text-center'>
-                      <ImQuotesLeft size={20} style={{ display: 'inline-block'}} /> 
-                      <span className='px-1'>{testimonial.comment}</span>
-                      <ImQuotesRight size={20} style={{ display: 'inline-block'}} /></p>
+                      <ImQuotesLeft size={22} style={{ display: 'inline-block', color: '#fa7602' }} /> 
+                      <span className='px-2 text-black'>{testimonial.comment}</span>
+                      <ImQuotesRight size={22} style={{ display: 'inline-block', color: '#fa7602' }} /></p>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </div>
           <div className='swiper-pagination'>
-            <span className='swiper-pagination-bullet bg-primaryColor'></span>
+            <span className='swiper-pagination-bullet swiper-pagination-bullet'></span>
           </div>
         </Swiper>
       </div>

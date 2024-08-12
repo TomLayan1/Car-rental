@@ -18,7 +18,7 @@ module.exports = {
         contactBg: '#00000088'
       },
       boxShadow: {
-        customShadow: '0 0px 18px rgba(0, 0, 0, 0.6)',
+        customShadow: '0 0px 9px rgba(0, 0, 0, 0.6)',
         btnShadow: '0px 1px 10px rgba(12, 80, 39, 0.5)',
       }
   }

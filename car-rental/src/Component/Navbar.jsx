@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { FaBars, FaTimes, FaMoon } from 'react-icons/fa'
+import { FaShoppingBag } from "react-icons/fa";
 import { IoSunnySharp } from "react-icons/io5";
 import { RentalContext } from '../Context/Context';
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -27,9 +29,9 @@ const Navbar = () => {
          animate={{ translateY: 0, opacity: 1 }}
          transition={{ duration: 1.5 }}
          className='hidden lg:flex lg:gap-6'>
-          <a className='list-none text-[14px] cursor-pointer'><li>Home</li></a>
+          <a href='#home' className='list-none text-[14px] cursor-pointer'><li>Home</li></a>
           <a href='#about' className='list-none text-[14px] cursor-pointer'><li>About Us</li></a>
-          <a className='list-none text-[14px] cursor-pointer'><li>Vehicle Models</li></a>
+          <a href='#vahicle-models' className='list-none text-[14px] cursor-pointer'><li>Vehicle Models</li></a>
           <a href='#testimonials' className='list-none text-[14px] cursor-pointer'><li>Testimonials</li></a>
           <a className='list-none text-[14px] cursor-pointer'><li>Our Team</li></a>
           <a className='list-none text-[14px] cursor-pointer'><li>Contact</li></a>
@@ -42,12 +44,15 @@ const Navbar = () => {
          className='flex gap-8 items-center justify-between'>
           <div className='hidden lg:flex'>
             <button className='w-[70px] text-[12px] py-1 text-primaryColor cursor-pointer'>Sign In</button>
-            <button className='w-[70px] text-[12px] py-1 bg-gradient-to-tr from-orange-600 to-orange-200 text-white rounded-3xl rounded-tr-none cursor-pointer'>Register</button>
+            <button className='w-[70px] text-[12px] py-1 bg-gradient-to-tr from-orange-600 to-orange-300 text-white rounded-3xl rounded-tr-none cursor-pointer'>Register</button>
           </div>
 
           <div onClick={()=>setDarkMode(!darkMode)} className='text-primaryColor text-[18px] cursor-pointer'>
             { darkMode ? <IoSunnySharp style={{ color: 'white'}} /> : <FaMoon style={{ color: 'black'}} /> }
           </div>
+
+          {/* ICON TO SEE CART */}
+          <Link to={'/cart'}><FaShoppingBag size={20} style={{ color: '#fa7602', cursor: 'pointer' }} /></Link>
 
           <div onClick={()=>setShowNav(!showNav)} className='text-primaryColor text-[18px] cursor-pointer lg:hidden'>
             { showNav ? <FaTimes /> : <FaBars /> }

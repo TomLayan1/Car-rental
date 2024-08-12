@@ -8,7 +8,7 @@ const MobileApp = () => {
   return (
     <div className='hidden h-[100vh] lg:flex items-center justify-center'>
       <motion.div
-        initial={{ translateY: 100, scale: 0.5 }}
+        initial={{ translateY: 100, scale: 0.9 }}
         whileInView={{ translateY: 0, scale: 1 }}
         transition={{ duration: 1.5, delay: 0.1 }}
         className='w-full h-[73vh] flex items-center justify-center relative'>
@@ -23,7 +23,7 @@ const MobileApp = () => {
                 <li><span className='font-bold'>Real-Time Updates:</span> Stay informed with instant notifications and updates.</li>
               </ul>
             </div>
-            <div className='flex items-center pl-10'>
+            <div className='flex items-center gap-3 pl-10'>
               <img className='w-[150px] h-[100%]' src={playStore} alt='play stor' />
               <img className='w-[150px] h-[100%]' src={appStore} alt='app store' />
             </div>

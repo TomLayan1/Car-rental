@@ -6,6 +6,7 @@ import AboutUs from '../Component/AboutUs'
 import MobileApp from '../Component/MobileApp'
 import Testimonial from '../Component/Testimonial'
 import Book from '../Component/Book'
+import Cars from '../Component/Cars'
 
 const Home = () => {
   // FROM CONTEXT
@@ -16,6 +17,7 @@ const Home = () => {
       <div className='px-6 md:px-16 lg:px-[100px]'>
         <HowItWorks />
         <Book />
+        <Cars />
         <AboutUs />
       </div>
       <Testimonial />

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .swiper-pagination-bullet {
+    /* Change bullet color */
+    @apply bg-orange-500;
+  }
+
+  .swiper-pagination-bullet-active {
+    /* Change active bullet color */
+    @apply bg-orange-700;
+  }
+}

@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaCar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
+import { RentalContext } from '../Context/Context';
 
 const Book = () => {
 
@@ -14,6 +15,9 @@ const Book = () => {
     dropOffDate: ''
   })
   console.log(booking)
+
+  // FROM CONTEXT
+  const { cars } = useContext(RentalContext);
 
   const handleBooking = (event) => {
     setBooking(prev => {return { ...prev, [event.target.name]: event.target.value}});
@@ -37,12 +41,9 @@ const Book = () => {
           onChange={handleBooking}
           className='w-full text-[15px] p-2 border bg-orange-50 border-primaryColor outline-0  text-black'>
             <option>Selct car</option>
-            <option>Car 1</option>
-            <option>Car 2</option>
-            <option>Car 3</option>
-            <option>Car 4</option>
-            <option>Car 5</option>
-            <option>Car 6</option>
+            {cars.map(car => (
+              <option>{car.carName}</option>
+            ))}
           </select>
         </div>
 
