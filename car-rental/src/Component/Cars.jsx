@@ -8,7 +8,7 @@ const Cars = () => {
 
   return (
     <section id='vahicle-models' className='py-20'>
-      <h2 className='text-3xl text-primaryColor text-center font-extrabold mb-5'>Book A Car</h2>
+      <h2 className='text-3xl md:text-4xl text-primaryColor text-center font-extrabold mb-5'>Book A Car</h2>
       <p className='text-[15px] text-center mb-20 md:w-[60%] mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus</p>
 
       <div

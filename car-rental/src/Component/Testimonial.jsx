@@ -19,7 +19,7 @@ const Testimonial = () => {
   return (
     <section id='testimonials' className='py-20 lg:py-24 px-5 bg-black lg:flex'>
       <div className='lg:w-[40%] lg:pl-20'>
-        <h2 className='text-3xl font-bold text-primaryColor mb-5'>What Our Clients Say</h2>
+        <h2 className='text-3xl md:text-4xl font-bold text-primaryColor mb-5'>What Our Clients Say</h2>
         <p className='text-white text-[14px] mb-10'>We pride ourselves on delivering exceptional experiences with our luxury vehicle rentals. But don’t just take our word for it. Hear what our satisfied clients have to say.</p>
       </div>
       <div className='w-full lg:w-[40%]  bg-white border border-primaryColor rounded-xl mx-auto shadow-customShadow'>

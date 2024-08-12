@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import Hero from '../Component/Hero'
+import Navbar from '../Component/Navbar'
+import Contact from '../Component/Contact'
 import { RentalContext } from '../Context/Context'
 import HowItWorks from '../Component/HowItWorks'
 import AboutUs from '../Component/AboutUs'
@@ -14,6 +16,8 @@ const Home = () => {
   return (
     <div className={`${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
       <Hero />
+      <Contact />
+      <Navbar />
       <div className='px-6 md:px-16 lg:px-[100px]'>
         <HowItWorks />
         <Book />

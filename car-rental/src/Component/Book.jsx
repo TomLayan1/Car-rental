@@ -27,7 +27,7 @@ const Book = () => {
   return (
     <section id='book' className='w-full lg:w-[90%] mx-auto py-9 md:py-12 lg:py-16'>
 
-      <h1 className='text-3xl text-primaryColor font-bold text-center mb-4'>Drive Your Dream Today</h1>
+      <h1 className='text-3xl md:text-4xl text-primaryColor font-bold text-center mb-4'>Drive Your Dream Today</h1>
       <p className='text-[15px] text-center mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
 
       <form className='text-[15px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8'>
