@@ -9,7 +9,7 @@ const Cart = () => {
   const { darkMode } = useContext(RentalContext)
 
   return (
-    <section className={`${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
+    <section className={`px-6 md:px-16 lg:px-[100px] ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
       <CartNav />
       <CartDetail />
     </section>

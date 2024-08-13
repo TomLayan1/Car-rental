@@ -5,7 +5,7 @@ import { FaCar } from "react-icons/fa";
 
 const CartNav = () => {
   return (
-    <div className='flex items-end justify-between px-3 md:px-6 py-5 bg-slate-950 mb-6'>
+    <div className='flex items-end justify-between py-5 mb-6'>
       <div className='w-[92%] lg:w-[97%] flex items-center text-white'>
         <div className='w-[25%] '>
           <p className='hidden md:block text-center text-[15px]'>Vehicle Selection</p>

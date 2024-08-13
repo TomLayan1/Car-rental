@@ -34,7 +34,7 @@ const Book = () => {
         <div className=''>
           <div className='flex items-center gap-2  mb-2'>
             <FaCar  size={20} style={{ color: '#fa7602'}} />
-            <p>Select car type</p>
+            <p>Select car Type</p>
           </div>
           <select
           name='selectCar'
@@ -50,7 +50,7 @@ const Book = () => {
         <div className=''>
           <div className='flex items-center gap-2 mb-2'>
             <FaLocationDot size={20} style={{ color: '#fa7602'}} />
-            <p>Pick-up location</p>
+            <p>Pickup Location</p>
           </div>
           <input
           type='text'
@@ -63,7 +63,7 @@ const Book = () => {
         <div className=''>
           <div className='flex items-center gap-2 mb-2'>
             <FaLocationDot size={20} style={{ color: '#fa7602'}} />
-            <p>Drop-off location</p>
+            <p>Dropoff Location</p>
           </div>
           <input 
           type='text'
@@ -75,7 +75,7 @@ const Book = () => {
         <div className=''>
           <div  className='flex items-center gap-2 mb-2'>
             <MdDateRange size={20} style={{ color: '#fa7602'}} />
-            <p>Pick-up date</p>
+            <p>Pickup Date</p>
           </div>
           <input
           type='date'
@@ -86,7 +86,7 @@ const Book = () => {
         <div className=''>
           <div  className='flex items-center gap-2 mb-2'>
             <MdDateRange size={20} style={{ color: '#fa7602'}} />
-            <p>Drop-off date</p>
+            <p>Dropoff Date</p>
           </div>
           <input 
           type='date'

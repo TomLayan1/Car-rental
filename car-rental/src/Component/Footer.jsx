@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { RentalContext } from '../Context/Context';
+import { FaCheckCircle } from "react-icons/fa";
 
 
 const Footer = () => {
@@ -9,7 +10,7 @@ const Footer = () => {
   const { darkMode } = useContext(RentalContext)
 
   return (
-    <footer className={`p-6 md:px-14 lg:px-[100px] ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
+    <footer className={`pt-6 md:px-14 lg:px-[100px] ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
       <h1 className='font-bold text-2xl cursor-pointer text-primaryColor mb-6'>Drive<span className=' text-grayLight'>Luxury</span></h1>
       <div className='text-[15px] mb-10 md:flex gap-20 lg:gap-40'>
         <div className='mb-8 w-full md:w-[40%]'>
@@ -36,7 +37,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-        <hr className='mb-2'/>
         <p className='text-[13px] text-center'>&#169;2024 Kode Design. All Right Reserved</p>
     </footer>
   )
