@@ -1,26 +1,60 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { FaCar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import { RentalContext } from '../Context/Context';
+import api from '../Axios/BaseURL';
 
 const Book = () => {
 
-  // STATE FOR STORING BOOKING DATA
-  const [booking, setBooking] = useState({
-    selectCar: '',
-    pickUp: '',
-    dropOff: '',
-    pickUpDate: '',
-    dropOffDate: ''
-  })
-  console.log(booking)
+  // FROMM CONTEXT
+  const { luxCars, booking, setBooking, reservation, setReservation} = useContext(RentalContext)
 
-  // FROM CONTEXT
-  const { cars } = useContext(RentalContext);
+  // STATE FOR SHOWING NOTIFICATION
+  const [notification, setNotification] = useState(null);
 
   const handleBooking = (event) => {
     setBooking(prev => {return { ...prev, [event.target.name]: event.target.value}});
+  }
+
+  // FUNCTION TO MAKE RESERVITION
+  const makeReservation = async (event) => {
+    event.preventDefault();
+
+    // Find selected car object based on the selected car name
+    const selectedCar = luxCars.find(car => car.carName === booking.selectedCar);
+
+    // Check if the selected car has already been reserved
+    const alreadyReserved = reservation.some(reserved => reserved.id === selectedCar.id);
+
+    if (alreadyReserved) {
+      setNotification('This car has already been added to you reservation!')
+    }
+
+    const newReservation = {
+      id: selectedCar.id,
+      carImage: selectedCar.carImage,
+      rentPrice: selectedCar.rentPrice,
+      selectCar: booking.selectCar,
+      pickUp: booking.pickUp,
+      dropOff: booking.dropOff,
+      pickUpDate: booking.pickUpDate,
+      dropOffDate: booking.dropOffDate
+     }
+    try {
+      const response = await api.post('/bookings', newReservation);
+      const allReservations = [...reservation, response.data];
+      setReservation(allReservations)
+      setBooking({
+        selectCar: '',
+        pickUp: '',
+        dropOff: '',
+        pickUpDate: '',
+        dropOffDate: ''
+      })
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   
@@ -30,7 +64,7 @@ const Book = () => {
       <h1 className='text-3xl md:text-4xl text-primaryColor font-bold text-center mb-4'>Drive Your Dream Today</h1>
       <p className='text-[15px] text-center mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
 
-      <form className='text-[15px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8'>
+      <form className='text-[15px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8' onSubmit={makeReservation}>
         <div className=''>
           <div className='flex items-center gap-2  mb-2'>
             <FaCar  size={20} style={{ color: '#fa7602'}} />
@@ -38,11 +72,12 @@ const Book = () => {
           </div>
           <select
           name='selectCar'
+          value={booking.selectCar}
           onChange={handleBooking}
           className='w-full text-[15px] p-2 border bg-orange-50 border-primaryColor outline-0  text-black'>
             <option>Selct car</option>
-            {cars.map(car => (
-              <option>{car.carName}</option>
+            {luxCars.map(car => (
+              <option key={car.id}>{car.carName}</option>
             ))}
           </select>
         </div>
@@ -55,6 +90,7 @@ const Book = () => {
           <input
           type='text'
           name='pickUp'
+          value={booking.pickUp}
           onChange={handleBooking}
           placeholder='Location Here'
           className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0 text-black' />
@@ -68,6 +104,7 @@ const Book = () => {
           <input 
           type='text'
           name='dropOff'
+          value={booking.dropOff}
           onChange={handleBooking}
           placeholder='Location Here' className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0 text-black' />
         </div>
@@ -80,6 +117,7 @@ const Book = () => {
           <input
           type='date'
           name='pickUpDate'
+          value={booking.pickUpDate}
           onChange={handleBooking}
           className='w-full text-[15px] p-2  bg-orange-50 border border-primaryColor outline-0  text-black' />
         </div>
@@ -91,6 +129,7 @@ const Book = () => {
           <input 
           type='date'
           name='dropOffDate'
+          value={booking.dropOffDate}
           onChange={handleBooking}
           className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0  text-black' />
         </div>

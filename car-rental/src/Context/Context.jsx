@@ -15,15 +15,50 @@ const RentalContextProvider = (props) => {
   // STATE FOR CARS
   const [luxCars, setLuxCars] = useState(cars);
 
+  // STATE TO SAVE RESERVATION
+  const [reservation, setReservation] = useState([]);
+  console.log(reservation)
+
+  // STATE FOR STORING BOOKING DATA
+  const [booking, setBooking] = useState({
+    selectCar: '',
+    pickUp: '',
+    dropOff: '',
+    pickUpDate: '',
+    dropOffDate: ''
+  })
+  console.log(booking)
+
+
   // FETCH TESTIMONIAL DATA
   useEffect(() => {
     const fetchTestimonialData = async () => {
-      await api.get('/testimonial').then( response => {
-        setTestimonial(response.data);
-      })
+      try {
+        await api.get('/testimonial').then( response => {
+          setTestimonial(response.data);
+        })
+      } catch (err) {
+        setTestimonial(err);
+      }
     }
 
     fetchTestimonialData();
+  }, [])
+
+
+  // FETCH RESERVATION DATA
+  useEffect(() => {
+    const fetchReservationData = async () => {
+      try {
+        await api.get('/bookings').then(response => {
+          setReservation(response.data);
+        })
+      } catch (err) {
+        console.log(err)
+      } 
+    }
+
+    fetchReservationData()
   }, [])
 
 
@@ -31,8 +66,11 @@ const RentalContextProvider = (props) => {
     darkMode,
     setDarkMode,
     testimonial,
-    cars,
-    luxCars
+    luxCars,
+    booking,
+    setBooking,
+    reservation,
+    setReservation
   }
   return(
     <RentalContext.Provider value={contextValue}>

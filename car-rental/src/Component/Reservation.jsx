@@ -1,24 +1,23 @@
 import React from 'react'
-import Reservation from './Reservation';
-import RateQuote from './RateQuote';
+import { FaPenFancy } from "react-icons/fa6";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdDateRange } from "react-icons/md";
+import rollsRoyce from '../Assets/Images/rolls-royce-dawn.png'
 
-
-const CartDetail = () => {
+const Reservation = () => {
   return (
-    <section className='mx-auto flex flex-col lg:flex-row gap-8 py-10 lg:text-[15px]'>
-      <Reservation />
-      <RateQuote />
+    <div className='flex flex-col lg:flex-row justify-between lg:w-[75%]'>
       {/* SELETED CAR */}
-      {/* <div className='border border-gray-300 lg:w-[25%] shadow-customShadow'>
+      <div className='border border-gray-300 lg:w-[30%] shadow-customShadow'>
         <h3 className='font-bold text-black bg-gray-300 py-1 px-2'>Selected Vehicle</h3>
         <div className='p-2'>
           <img src={rollsRoyce} alt='Rolls Royce' className='mb-3 w-[250px' />
           <p className=''>Roll Royce Dawn</p>
         </div>
-      </div> */}
+      </div>
 
       {/* DETAILS */}
-      {/* <div className='border border-gray-300 lg:h-[220px] shadow-customShadow text-[15px]'>
+      <div className='border border-gray-300 lg:w-[65%] lg:h-[220px] shadow-customShadow text-[15px]'>
         <h3 className='font-bold text-black bg-gray-300 py-1 px-2'>Your Detail</h3>
         <div className=' p-2'>
           <div className='md:flex flex-wrap '>
@@ -57,31 +56,9 @@ const CartDetail = () => {
             <p className='font-bold'>Change</p>
           </div>
         </div>
-      </div> */}
-
-      {/* RATE QUOTE */}
-      {/* <div className='border border-gray-300 lg:w-[25%] h-[200px] lg:h-[200px] shadow-customShadow text-[15px]'>
-        <h3 className='font-bold text-black bg-gray-300 py-1 px-2'>Rate Quote</h3>
-        <div className=' px-2 flex flex-col justify-between'>
-          <div className=''>
-            <div className='flex justify-between mb-4'>
-              <p className='font-bold'>Car Price</p>
-              <p className=''>$0.00</p>
-            </div>
-            <div className='flex justify-between mb-4'>
-              <p className='font-bold'>Tax</p>
-              <p className=''>$0.00</p>
-            </div>
-            <div className='flex justify-between mb-4'>
-              <p className='font-bold'>Total</p>
-              <p className=''>$0.00</p>
-            </div>
-          </div>
-          <button className='bg-primaryColor text-white w-full py-2'>Book Car</button>
-        </div>
-      </div> */}
-    </section>
+      </div>
+    </div>
   )
 }
 
-export default CartDetail
+export default Reservation
