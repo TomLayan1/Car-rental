@@ -12,7 +12,8 @@ import Cars from '../Component/Cars'
 
 const Home = () => {
   // FROM CONTEXT
-  const { darkMode } = useContext(RentalContext)
+  const { darkMode } = useContext(RentalContext);
+  
   return (
     <div className={`${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
       <Hero />

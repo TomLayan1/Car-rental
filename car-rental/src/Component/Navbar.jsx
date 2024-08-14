@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
 
   // DARKMODE STATE FROM CONTEXT
-  const { darkMode, setDarkMode } = useContext(RentalContext);
+  const { darkMode, setDarkMode, notification, setNotification } = useContext(RentalContext);
 
   // STATE TO SHOW MOBILE NAVBAR
   const [showNav, setShowNav] = useState(false)
@@ -17,6 +17,10 @@ const Navbar = () => {
   return (
     <>
       {showNav && <div onClick={() => setShowNav(false)} className='fixed top-0 left-0 w-full h-[100vh] bg-grayBg'></div>}
+      {notification && <div className={`bg-primaryColor text-white w-full fixed left-0 flex items-center text-[15px] mt-1 justify-between px-3 md:px-[30px] lg:px-[100px] py-[15px] ${notification ? 'top-16' : 'top-0'} duration-300`}>
+        <p className='text-center w-[88%] lg:w-[98%]'>{notification}</p>
+        <FaTimes size={20} style={{ cursor: 'pointer' }} onClick={() => setNotification(null)} />
+      </div>}
       <div className={`w-full fixed top-0 left-0 z-50 flex items-center justify-between px-[12px] md:px-[30px] lg:px-[100px] py-5 ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
         <motion.h1
          initial={{ translateY: -50, opacity: 0 }}

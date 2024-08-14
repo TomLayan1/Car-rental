@@ -36,5 +36,16 @@
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst."
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "id": "6",
+      "carImage": "/static/media/mercedes amg gt r.ec247fd7d1826f3c090d.png",
+      "rentPrice": 180,
+      "selectCar": "Mercedes AMG GTR",
+      "pickUp": "Lagos",
+      "dropOff": "Abuja",
+      "pickUpDate": "2024-08-16",
+      "dropOffDate": "2024-08-30"
+    }
+  ]
 }

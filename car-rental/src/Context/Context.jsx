@@ -14,11 +14,7 @@ const RentalContextProvider = (props) => {
 
   // STATE FOR CARS
   const [luxCars, setLuxCars] = useState(cars);
-
-  // STATE TO SAVE RESERVATION
-  const [reservation, setReservation] = useState([]);
-  console.log(reservation)
-
+  console.log(luxCars)
   // STATE FOR STORING BOOKING DATA
   const [booking, setBooking] = useState({
     selectCar: '',
@@ -29,6 +25,33 @@ const RentalContextProvider = (props) => {
   })
   console.log(booking)
 
+  // STATE TO SAVE RESERVATION
+  const [reservation, setReservation] = useState([]);
+  console.log(reservation)
+
+  // STATE FOR SHOWING NOTIFICATION
+  const [notification, setNotification] = useState(null);
+  console.log(notification)
+
+  // STATE FOR SHOW FORM VALIDATION
+  const [formNotification, setFormNotification] = useState(null);
+
+  // Auto-hide notification after 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setNotification(null), 8000);
+    return () => clearTimeout(timer);
+  }, [notification])
+
+  // Validate booking before submission
+  const validateBooking = () => {
+    if (!booking.selectCar || !booking.pickUp || !booking.dropOff || !booking.pickUpDate || !booking.dropOffDate) {
+      setFormNotification('All fields are required');
+      return false;
+    }
+    return true
+  }
+
+
 
   // FETCH TESTIMONIAL DATA
   useEffect(() => {
@@ -38,7 +61,7 @@ const RentalContextProvider = (props) => {
           setTestimonial(response.data);
         })
       } catch (err) {
-        setTestimonial(err);
+        setTestimonial(err.message);
       }
     }
 
@@ -54,12 +77,24 @@ const RentalContextProvider = (props) => {
           setReservation(response.data);
         })
       } catch (err) {
-        console.log(err)
+        console.log(err.message)
       } 
     }
 
     fetchReservationData()
   }, [])
+
+  // CALCULATE PRICE
+  const getPrice = () => {
+    let costPrice = 0;
+    for (const carId in reservation) {
+      const rentItem = reservation[carId];
+      costPrice += rentItem.rentPrice
+    }
+    return (costPrice / 100).toFixed(2)
+  }
+
+  console.log(getPrice())
 
 
   const contextValue = {
@@ -70,7 +105,12 @@ const RentalContextProvider = (props) => {
     booking,
     setBooking,
     reservation,
-    setReservation
+    setReservation,
+    notification,
+    setNotification,
+    formNotification,
+    setFormNotification,
+    getPrice
   }
   return(
     <RentalContext.Provider value={contextValue}>

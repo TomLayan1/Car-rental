@@ -1,7 +1,7 @@
-import bmw from '../Assets/Images/BMW_435i_Cabriolet_M_Sport_(F33).png'
-import lambo from '../Assets/Images/lamborghini veneno.png'
+import bmw from '../Assets/Images/BMW-435i-Cabriolet-M-Sport-(F33).png'
+import lambo from '../Assets/Images/lamborghini-veneno.png'
 import lexus from '../Assets/Images/lexus-ls-500.png'
-import mercedes from '../Assets/Images/mercedes amg gt r.png'
+import mercedes from '../Assets/Images/mercedes-amg-gt-r.png'
 import rollsRoys from '../Assets/Images/rolls-royce-dawn.png'
 import toyota from '../Assets/Images/Toyota-GR-86-Trompa.png'
 
