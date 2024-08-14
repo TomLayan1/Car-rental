@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { RentalContext } from '../Context/Context'
 
 const RateQuote = () => {
+  // FROM CONTEXT
+  const { getPrice } = useContext(RentalContext);
   return (
     <div className='border border-gray-300 lg:w-[25%] h-[200px] lg:h-[200px] shadow-customShadow text-[15px]'>
       <h3 className='font-bold text-black bg-gray-300 py-1 px-2 mb-2'>Rate Quote</h3>
@@ -8,7 +11,7 @@ const RateQuote = () => {
         <div className=''>
           <div className='flex justify-between mb-4'>
             <p className='font-bold'>Car Price</p>
-            <p className=''>$0.00</p>
+            <p className=''>${getPrice()}</p>
           </div>
           <div className='flex justify-between mb-4'>
             <p className='font-bold'>Tax</p>
