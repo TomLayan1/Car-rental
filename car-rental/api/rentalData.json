@@ -38,14 +38,14 @@
   ],
   "bookings": [
     {
-      "id": "6",
-      "carImage": "/static/media/mercedes amg gt r.ec247fd7d1826f3c090d.png",
-      "rentPrice": 180,
+      "id": "4",
+      "carImage": "/static/media/mercedes-amg-gt-r.ec247fd7d1826f3c090d.png",
+      "rentPrice": 18000,
       "selectCar": "Mercedes AMG GTR",
-      "pickUp": "Lagos",
+      "pickUp": "Abuja",
       "dropOff": "Abuja",
       "pickUpDate": "2024-08-16",
-      "dropOffDate": "2024-08-30"
+      "dropOffDate": "2024-08-17"
     }
   ]
 }

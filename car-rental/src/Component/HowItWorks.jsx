@@ -18,6 +18,16 @@ const HowItWorks = () => {
           <motion.div
             initial={{ translateY: 200, opacity: 0 }}
             whileInView={{ translateY: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
+            <FaCar size={32} style={{color: '#fa7602'}}  />
+            <h4 className='text-lg text-black font-semibold'>Book Your Car</h4>
+            <p className='text-[13px] text-black text-center'> Browse our selection of luxury vehicles, select your preferred model, and complete your booking.</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ translateY: 200, opacity: 0 }}
+            whileInView={{ translateY: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
             <FaLocationDot size={32} style={{color: '#fa7602'}} />
@@ -33,16 +43,6 @@ const HowItWorks = () => {
             <AiFillSchedule size={32} style={{color: '#fa7602'}}  />
             <h4 className='text-lg text-black font-semibold'>Pick A Date</h4>
             <p className='text-[13px] text-black text-center'>Choose the pick-up date that suits your schedule for a seamless rental experience.</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ translateY: 200, opacity: 0 }}
-            whileInView={{ translateY: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-            className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
-            <FaCar size={32} style={{color: '#fa7602'}}  />
-            <h4 className='text-lg text-black font-semibold'>Book Your Car</h4>
-            <p className='text-[13px] text-black text-center'> Browse our selection of luxury vehicles, select your preferred model, and complete your booking.</p>
           </motion.div>
         </div>
     </div>

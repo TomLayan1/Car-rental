@@ -9,12 +9,15 @@ const RentalContextProvider = (props) => {
   // STATE TO SELECT MODE
   const [darkMode, setDarkMode] = useState(false);
 
+  // STATE TO SHOW EDITING PAGE
+  const [showEditPage, setShowEditPage] = useState(false);
+
   // STATE TO SAVE TESTIMOMIAL DATA
   const [testimonial, setTestimonial] = useState([]);
 
   // STATE FOR CARS
   const [luxCars, setLuxCars] = useState(cars);
-  console.log(luxCars)
+
   // STATE FOR STORING BOOKING DATA
   const [booking, setBooking] = useState({
     selectCar: '',
@@ -23,34 +26,16 @@ const RentalContextProvider = (props) => {
     pickUpDate: '',
     dropOffDate: ''
   })
-  console.log(booking)
 
   // STATE TO SAVE RESERVATION
   const [reservation, setReservation] = useState([]);
-  console.log(reservation)
+  console.log(reservation);
 
   // STATE FOR SHOWING NOTIFICATION
   const [notification, setNotification] = useState(null);
-  console.log(notification)
 
   // STATE FOR SHOW FORM VALIDATION
   const [formNotification, setFormNotification] = useState(null);
-
-  // Auto-hide notification after 3 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => setNotification(null), 8000);
-    return () => clearTimeout(timer);
-  }, [notification])
-
-  // Validate booking before submission
-  const validateBooking = () => {
-    if (!booking.selectCar || !booking.pickUp || !booking.dropOff || !booking.pickUpDate || !booking.dropOffDate) {
-      setFormNotification('All fields are required');
-      return false;
-    }
-    return true
-  }
-
 
 
   // FETCH TESTIMONIAL DATA
@@ -68,6 +53,14 @@ const RentalContextProvider = (props) => {
     fetchTestimonialData();
   }, [])
 
+  // Validate booking before submission
+  const validateBooking = () => {
+    if (!booking.selectCar || !booking.pickUp || !booking.dropOff || !booking.pickUpDate || !booking.dropOffDate) {
+      setFormNotification('All fields are required');
+      return false;
+    }
+    return true
+  }
 
   // FETCH RESERVATION DATA
   useEffect(() => {
@@ -84,6 +77,17 @@ const RentalContextProvider = (props) => {
     fetchReservationData()
   }, [])
 
+  // DELETE RESERVATION
+  const deleteReservation = async (id) => {
+    try {
+      await api.delete(`/bookings/${id}`)
+      const newReservation = reservation.filter(reservation => reservation.id !== id);
+      setReservation(newReservation)
+    } catch (err) {
+      console.log(err.response)
+    }
+  }
+
   // CALCULATE PRICE
   const getPrice = () => {
     let costPrice = 0;
@@ -94,8 +98,39 @@ const RentalContextProvider = (props) => {
     return (costPrice / 100).toFixed(2)
   }
 
-  console.log(getPrice())
+  // CALCULATE TAX
+  const getTax = () => {
+    const costPrice = getPrice();
+    const tax = Number(costPrice * 0.1);
+    return tax.toFixed(2)
+  }
 
+  // CALCULATE TOTAL PRICE
+  const getTotalPrice = () => {
+    const costPrice = getPrice();
+    const tax = getTax();
+    const totalPrice = Number(costPrice) + Number(tax)
+    return totalPrice.toFixed(2)
+  }
+
+  const [test, setTest] = useState({
+    id: '',
+    selectCar: '',
+    pickUp: '',
+    dropOff: '',
+    pickUpDate: '',
+    dropOffDate: ''
+  })
+  console.log(test)
+
+  // FUNCTION TO SHOW EDITING PAGE
+  const editReservation = (id) => {
+    setShowEditPage(true)
+    const selectedReservation = reservation.find(reservation => reservation.id === id)
+    if (selectedReservation) {
+      setTest({...selectedReservation});
+    }
+  }
 
   const contextValue = {
     darkMode,
@@ -110,7 +145,15 @@ const RentalContextProvider = (props) => {
     setNotification,
     formNotification,
     setFormNotification,
-    getPrice
+    deleteReservation,
+    getPrice,
+    getTax,
+    getTotalPrice,
+    showEditPage,
+    setShowEditPage,
+    editReservation,
+    test,
+    setTest
   }
   return(
     <RentalContext.Provider value={contextValue}>

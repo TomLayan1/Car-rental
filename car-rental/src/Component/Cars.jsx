@@ -19,13 +19,12 @@ const Cars = () => {
           whileInView={{ translateY: 0 }}
           transition={{ duration: 0.5 }}
           key={car.id}
-          className='shadow-customShadow p-3'>
-            <h3 className='text-2xl text-end font-bold text-primaryColor'>${car.rentPrice}</h3>
+          className='shadow-customShadow p-2'>
+            <h3 className='text-xl text-end font-bold text-primaryColor'>${(car.rentPrice / 100).toFixed(2)}</h3>
             <div className='p-2 h-[184px] lg:h-[150px]'>
               <img src={car.carImage} alt={car.carName} />
             </div>
-            <p className='text-center lg:text-[15px] my-5'>{car.carName}</p>
-            {/* <button className='w-full bg-primaryColor text-white py-2'>RESERVE</button> */}
+            <p className='text-center lg:text-[15px] mt-5 font-semibold'>{car.carName}</p>
           </motion.div>
         ))}
       </div>

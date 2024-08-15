@@ -1,9 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { FaCar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import { RentalContext } from '../Context/Context';
 import api from '../Axios/BaseURL';
+import Progress from './Progress';
 
 const Book = () => {
 
@@ -98,8 +99,10 @@ const Book = () => {
     <section id='book' className='w-full lg:w-[90%] mx-auto py-9 md:py-12 lg:py-16'>
 
       <h1 className='text-3xl md:text-4xl text-primaryColor font-bold text-center mb-4'>Drive Your Dream Today</h1>
-      <p className='text-[15px] text-center mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
+      <p className='text-[15px] text-center font-semibold mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
 
+      {/* Progress component */}
+      <Progress />
 
       {formNotification && <p className='text-red-700 mb-3'>{formNotification}*</p>}
       <form className='text-[15px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8' onSubmit={makeReservation}>
@@ -172,7 +175,7 @@ const Book = () => {
           className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0  text-black' />
         </div>
 
-          <button className='bg-primaryColor text-white h-[45px] mt-7'>Submit</button>
+          <button className='bg-primaryColor text-white h-[45px] mt-7' type='submit'>Submit</button>
       </form>
     </section>
   )
