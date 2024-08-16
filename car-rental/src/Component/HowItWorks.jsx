@@ -18,7 +18,7 @@ const HowItWorks = () => {
           <motion.div
             initial={{ translateY: 200, opacity: 0 }}
             whileInView={{ translateY: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
             <FaCar size={32} style={{color: '#fa7602'}}  />
             <h4 className='text-lg text-black font-semibold'>Book Your Car</h4>
@@ -28,7 +28,7 @@ const HowItWorks = () => {
           <motion.div
             initial={{ translateY: 200, opacity: 0 }}
             whileInView={{ translateY: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
             <FaLocationDot size={32} style={{color: '#fa7602'}} />
             <h4 className='text-lg text-black text-center font-semibold'>Choose a Location</h4>
@@ -38,7 +38,7 @@ const HowItWorks = () => {
           <motion.div
             initial={{ translateY: 200, opacity: 0 }}
             whileInView={{ translateY: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
             <AiFillSchedule size={32} style={{color: '#fa7602'}}  />
             <h4 className='text-lg text-black font-semibold'>Pick A Date</h4>

@@ -12,31 +12,31 @@ const Edit = () => {
     showEditPage,
     setShowEditPage,
     darkMode,
-    test,
-    setTest,
+    editReservation,
+    setEditReservation,
     reservation,
     setReservation,
   } = useContext(RentalContext);
 
   const handleEditing = (e) => {
     e.preventDefault();
-    setTest(prev => {return {...prev, [e.target.name]: e.target.value }})
+    setEditReservation(prev => {return {...prev, [e.target.name]: e.target.value }})
   }
 
 
   const EditReservation = async (id) => {
     // Find selected car object based on the selected car name
-    const selectedCar = luxCars.find(car => car.carName === test.selectCar);
+    const selectedCar = luxCars.find(car => car.carName === editReservation.selectCar);
 
     const updatedReservation = {
       id: id,
       carImage: selectedCar.carImage,
       rentPrice: selectedCar.rentPrice,
-      selectCar: test.selectCar,
-      pickUp: test.pickUp,
-      dropOff: test.dropOff,
-      pickUpDate: test.pickUpDate,
-      dropOffDate: test.dropOffDate
+      selectCar: editReservation.selectCar,
+      pickUp: editReservation.pickUp,
+      dropOff: editReservation.dropOff,
+      pickUpDate: editReservation.pickUpDate,
+      dropOffDate: editReservation.dropOffDate
     }
 
     try{
@@ -44,7 +44,7 @@ const Edit = () => {
 
       // Update the reservation state with the edited reservation
       setReservation(reservation.map(reservation => reservation.id === id ? response.data : reservation))
-      setTest({
+      setEditReservation({
         id: '',
         selectCar: '',
         pickUp: '',
@@ -74,7 +74,7 @@ const Edit = () => {
           </div>
           <select
           name='selectCar'
-          value={test.selectCar}
+          value={editReservation.selectCar}
           onChange={handleEditing}
           className='w-full text-[15px] p-2 border bg-orange-50 border-primaryColor outline-0  text-black'>
             <option>Selct car</option>
@@ -92,7 +92,7 @@ const Edit = () => {
           <input
           type='text'
           name='pickUp'
-          value={test.pickUp}
+          value={editReservation.pickUp}
           onChange={handleEditing}
           placeholder='Location Here'
           className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0 text-black' />
@@ -106,7 +106,7 @@ const Edit = () => {
           <input 
           type='text'
           name='dropOff'
-          value={test.dropOff}
+          value={editReservation.dropOff}
           onChange={handleEditing}
           placeholder='Location Here' className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0 text-black' />
         </div>
@@ -119,7 +119,7 @@ const Edit = () => {
           <input
           type='date'
           name='pickUpDate'
-          value={test.pickUpDate}
+          value={editReservation.pickUpDate}
           onChange={handleEditing}
           className='w-full text-[15px] p-2  bg-orange-50 border border-primaryColor outline-0  text-black' />
         </div>
@@ -131,11 +131,11 @@ const Edit = () => {
           <input 
           type='date'
           name='dropOffDate'
-          value={test.dropOffDate}
+          value={editReservation.dropOffDate}
           onChange={handleEditing}
           className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0  text-black' />
         </div>
-          <button className='bg-primaryColor text-white h-[45px] mt-4' type='submit' onClick={(e) => EditReservation(test.id)} >Change</button>
+          <button className='bg-primaryColor text-white h-[45px] mt-4' type='submit' onClick={(e) => EditReservation(editReservation.id)} >Change</button>
       </form>
     </div>
     </>

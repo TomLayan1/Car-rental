@@ -113,7 +113,8 @@ const RentalContextProvider = (props) => {
     return totalPrice.toFixed(2)
   }
 
-  const [test, setTest] = useState({
+  // STATE TO EDIT RESERVATIONS
+  const [editReservation, setEditReservation] = useState({
     id: '',
     selectCar: '',
     pickUp: '',
@@ -121,14 +122,14 @@ const RentalContextProvider = (props) => {
     pickUpDate: '',
     dropOffDate: ''
   })
-  console.log(test)
+  console.log(editReservation)
 
   // FUNCTION TO SHOW EDITING PAGE
-  const editReservation = (id) => {
+  const handleEditReservation = (id) => {
     setShowEditPage(true)
     const selectedReservation = reservation.find(reservation => reservation.id === id)
     if (selectedReservation) {
-      setTest({...selectedReservation});
+      setEditReservation({...selectedReservation});
     }
   }
 
@@ -151,9 +152,9 @@ const RentalContextProvider = (props) => {
     getTotalPrice,
     showEditPage,
     setShowEditPage,
+    handleEditReservation,
     editReservation,
-    test,
-    setTest
+    setEditReservation
   }
   return(
     <RentalContext.Provider value={contextValue}>

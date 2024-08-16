@@ -7,7 +7,7 @@ import { RentalContext } from '../Context/Context';
 
 const Reservation = () => {
   // FROM CONTEXT
-  const { reservation, deleteReservation, editReservation } = useContext(RentalContext);
+  const { reservation, deleteReservation, handleEditReservation } = useContext(RentalContext);
 
   return (
     <div className='flex flex-col lg:w-[75%] gap-10'>
@@ -64,7 +64,7 @@ const Reservation = () => {
                 <div className='flex justify-between mb-2'>
                   <div className='flex items-center gap-1 cursor-pointer mb-2'>
                     <FaPen size={16} style={{ color: '#fa7602' }} />
-                    <p className='font-bold underline' onClick={()=>editReservation(reservation.id)}>Edit</p>
+                    <p className='font-bold underline' onClick={()=>handleEditReservation(reservation.id)}>Edit</p>
                   </div>
                   <TiDelete size={24} style={{ color: 'red',cursor: 'pointer'}} onClick={() => deleteReservation(reservation.id)} />
                 </div>

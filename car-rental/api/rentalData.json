@@ -39,9 +39,9 @@
   "bookings": [
     {
       "id": "4",
-      "carImage": "/static/media/mercedes-amg-gt-r.ec247fd7d1826f3c090d.png",
+      "carImage": "/static/media/rolls-royce-dawn.ab92f71680c331a6f0fa.png",
       "rentPrice": 18000,
-      "selectCar": "Mercedes AMG GTR",
+      "selectCar": "Rolls Royce Dawn",
       "pickUp": "Abuja",
       "dropOff": "Abuja",
       "pickUpDate": "2024-08-16",
