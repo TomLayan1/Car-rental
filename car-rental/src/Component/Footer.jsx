@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
       </div>
       <hr className='mb-1'/>
-      <p className='text-[13px] text-center mb-1'>&#169;2024 Kode Design. All Right Reserved</p>
+      <p className='text-[13px] text-center mb-1'>&#169; Copyright Tomisin 2024. All Right Reserved</p>
     </footer>
   )
 }

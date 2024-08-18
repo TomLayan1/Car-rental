@@ -12,10 +12,12 @@ const Edit = () => {
     showEditPage,
     setShowEditPage,
     darkMode,
+    rentalCart,
+    setRentalCart,
     editReservation,
     setEditReservation,
-    reservation,
-    setReservation,
+    // reservation,
+    // setReservation,
   } = useContext(RentalContext);
 
   const handleEditing = (e) => {
@@ -24,7 +26,7 @@ const Edit = () => {
   }
 
 
-  const EditReservation = async (id) => {
+  const EditReservation = (id) => {
     // Find selected car object based on the selected car name
     const selectedCar = luxCars.find(car => car.carName === editReservation.selectCar);
 
@@ -39,11 +41,8 @@ const Edit = () => {
       dropOffDate: editReservation.dropOffDate
     }
 
-    try{
-      const response = await api.put(`/bookings/${id}`, updatedReservation);
-
       // Update the reservation state with the edited reservation
-      setReservation(reservation.map(reservation => reservation.id === id ? response.data : reservation))
+      setRentalCart(prevCart => prevCart.map(reservation => reservation.id === id ? updatedReservation : reservation))
       setEditReservation({
         id: '',
         selectCar: '',
@@ -54,9 +53,6 @@ const Edit = () => {
       })
       // Close the edit page after submission
       setShowEditPage(false)
-    } catch (err) {
-      console.log(`Error: ${err.message}`)
-    }
   }
   
   return (

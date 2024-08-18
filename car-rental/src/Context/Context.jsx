@@ -9,6 +9,18 @@ const RentalContextProvider = (props) => {
   // STATE TO SELECT MODE
   const [darkMode, setDarkMode] = useState(false);
 
+  // STATE TO SAVE CART
+  const [testCart, setTestCart] = useState([]);
+  const [rentalCart, setRentalCart] = useState(() => {
+    const savedCart = localStorage.getItem('rentalCart');
+    return savedCart ? JSON.parse(savedCart) : []
+  })
+  console.log(rentalCart);
+
+  useEffect(() => {
+    localStorage.setItem('rentalCart', JSON.stringify(rentalCart));
+  }, [rentalCart])
+
   // STATE TO SHOW EDITING PAGE
   const [showEditPage, setShowEditPage] = useState(false);
 
@@ -29,7 +41,6 @@ const RentalContextProvider = (props) => {
 
   // STATE TO SAVE RESERVATION
   const [reservation, setReservation] = useState([]);
-  console.log(reservation);
 
   // STATE FOR SHOWING NOTIFICATION
   const [notification, setNotification] = useState(null);
@@ -83,6 +94,7 @@ const RentalContextProvider = (props) => {
       await api.delete(`/bookings/${id}`)
       const newReservation = reservation.filter(reservation => reservation.id !== id);
       setReservation(newReservation)
+      setRentalCart(newReservation)
     } catch (err) {
       console.log(err.response)
     }
@@ -122,7 +134,6 @@ const RentalContextProvider = (props) => {
     pickUpDate: '',
     dropOffDate: ''
   })
-  console.log(editReservation)
 
   // FUNCTION TO SHOW EDITING PAGE
   const handleEditReservation = (id) => {
@@ -140,6 +151,8 @@ const RentalContextProvider = (props) => {
     luxCars,
     booking,
     setBooking,
+    rentalCart,
+    setRentalCart,
     reservation,
     setReservation,
     notification,

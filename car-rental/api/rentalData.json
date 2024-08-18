@@ -38,14 +38,14 @@
   ],
   "bookings": [
     {
-      "id": "4",
-      "carImage": "/static/media/rolls-royce-dawn.ab92f71680c331a6f0fa.png",
+      "id": "1",
+      "carImage": "/static/media/BMW-435i-Cabriolet-M-Sport-(F33).303d5f55de1830ca7d8e.png",
       "rentPrice": 18000,
-      "selectCar": "Rolls Royce Dawn",
-      "pickUp": "Abuja",
-      "dropOff": "Abuja",
-      "pickUpDate": "2024-08-16",
-      "dropOffDate": "2024-08-17"
+      "selectCar": "BMW 435i Cabriolet M Sport (F33)",
+      "pickUp": "Lagos",
+      "dropOff": "Ikeja",
+      "pickUpDate": "2024-08-19",
+      "dropOffDate": "2024-08-19"
     }
   ]
 }

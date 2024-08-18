@@ -13,6 +13,7 @@ const Book = () => {
     luxCars,
     booking,
     setBooking,
+    setRentalCart,
     reservation,
     setReservation,
     notification,
@@ -80,6 +81,7 @@ const Book = () => {
       const response = await api.post('/bookings', newReservation);
       const allReservations = [...reservation, response.data];
       setReservation(allReservations)
+      setRentalCart(allReservations)
       setNotification('Successfully Made Reservation')
       setBooking({
         selectCar: '',
@@ -99,7 +101,7 @@ const Book = () => {
     <section id='book' className='w-full lg:w-[90%] mx-auto py-9 md:py-12 lg:py-16'>
 
       <h1 className='text-3xl md:text-4xl text-primaryColor font-bold text-center mb-4'>Drive Your Dream Today</h1>
-      <p className='text-[15px] text-center font-semibold mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
+      <p className='text-lg text-center mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
 
       {/* Progress component */}
       <Progress />
