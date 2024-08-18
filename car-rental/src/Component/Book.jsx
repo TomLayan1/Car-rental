@@ -3,7 +3,6 @@ import { FaCar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import { RentalContext } from '../Context/Context';
-import api from '../Axios/BaseURL';
 import Progress from './Progress';
 
 const Book = () => {
@@ -13,9 +12,8 @@ const Book = () => {
     luxCars,
     booking,
     setBooking,
+    rentalCart,
     setRentalCart,
-    reservation,
-    setReservation,
     notification,
     setNotification,
     formNotification,
@@ -60,7 +58,7 @@ const Book = () => {
     }
 
     // Check if the selected car has already been reserved
-    const alreadyReserved = reservation.some(reserved => reserved.id === selectedCar.id);
+    const alreadyReserved = rentalCart.some(cart => cart.id === selectedCar.id);
 
     if (alreadyReserved) {
       setNotification('This car has already been added to you reservation!')
@@ -77,23 +75,15 @@ const Book = () => {
       dropOffDate: booking.dropOffDate
     }
 
-    try {
-      const response = await api.post('/bookings', newReservation);
-      const allReservations = [...reservation, response.data];
-      setReservation(allReservations)
-      setRentalCart(allReservations)
-      setNotification('Successfully Made Reservation')
-      setBooking({
-        selectCar: '',
-        pickUp: '',
-        dropOff: '',
-        pickUpDate: '',
-        dropOffDate: ''
-      })
-    } catch (err) {
-      console.log(err)
-      setNotification('Error making reservation, please try again.')
-    }
+    setRentalCart(prev => [...rentalCart, newReservation])
+    setNotification('Successfully Made Reservation')
+    setBooking({
+      selectCar: '',
+      pickUp: '',
+      dropOff: '',
+      pickUpDate: '',
+      dropOffDate: ''
+    })
   }
 
   

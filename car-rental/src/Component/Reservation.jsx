@@ -7,7 +7,11 @@ import { RentalContext } from '../Context/Context';
 
 const Reservation = () => {
   // FROM CONTEXT
-  const { rentalCart, reservation, deleteReservation, handleEditReservation } = useContext(RentalContext);
+  const {
+    rentalCart,
+    deleteReservation,
+    handleEditReservation
+  } = useContext(RentalContext);
 
   return (
     <div className='flex flex-col lg:w-[75%] gap-10'>

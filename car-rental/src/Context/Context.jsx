@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import api from '../Axios/BaseURL'
-import cars from '../Data/cars'
+import { cars, testimonials } from "../Data/rentalData";
 
 export const RentalContext = createContext(null);
 
@@ -10,12 +9,10 @@ const RentalContextProvider = (props) => {
   const [darkMode, setDarkMode] = useState(false);
 
   // STATE TO SAVE CART
-  const [testCart, setTestCart] = useState([]);
   const [rentalCart, setRentalCart] = useState(() => {
     const savedCart = localStorage.getItem('rentalCart');
     return savedCart ? JSON.parse(savedCart) : []
   })
-  console.log(rentalCart);
 
   useEffect(() => {
     localStorage.setItem('rentalCart', JSON.stringify(rentalCart));
@@ -25,7 +22,7 @@ const RentalContextProvider = (props) => {
   const [showEditPage, setShowEditPage] = useState(false);
 
   // STATE TO SAVE TESTIMOMIAL DATA
-  const [testimonial, setTestimonial] = useState([]);
+  const [testimonial, setTestimonial] = useState(testimonials);
 
   // STATE FOR CARS
   const [luxCars, setLuxCars] = useState(cars);
@@ -48,56 +45,11 @@ const RentalContextProvider = (props) => {
   // STATE FOR SHOW FORM VALIDATION
   const [formNotification, setFormNotification] = useState(null);
 
-
-  // FETCH TESTIMONIAL DATA
-  useEffect(() => {
-    const fetchTestimonialData = async () => {
-      try {
-        await api.get('/testimonial').then( response => {
-          setTestimonial(response.data);
-        })
-      } catch (err) {
-        setTestimonial(err.message);
-      }
-    }
-
-    fetchTestimonialData();
-  }, [])
-
-  // Validate booking before submission
-  const validateBooking = () => {
-    if (!booking.selectCar || !booking.pickUp || !booking.dropOff || !booking.pickUpDate || !booking.dropOffDate) {
-      setFormNotification('All fields are required');
-      return false;
-    }
-    return true
-  }
-
-  // FETCH RESERVATION DATA
-  useEffect(() => {
-    const fetchReservationData = async () => {
-      try {
-        await api.get('/bookings').then(response => {
-          setReservation(response.data);
-        })
-      } catch (err) {
-        console.log(err.message)
-      } 
-    }
-
-    fetchReservationData()
-  }, [])
-
   // DELETE RESERVATION
-  const deleteReservation = async (id) => {
-    try {
-      await api.delete(`/bookings/${id}`)
+  const deleteReservation = (id) => {
       const newReservation = reservation.filter(reservation => reservation.id !== id);
       setReservation(newReservation)
       setRentalCart(newReservation)
-    } catch (err) {
-      console.log(err.response)
-    }
   }
 
   // CALCULATE PRICE
@@ -153,8 +105,6 @@ const RentalContextProvider = (props) => {
     setBooking,
     rentalCart,
     setRentalCart,
-    reservation,
-    setReservation,
     notification,
     setNotification,
     formNotification,

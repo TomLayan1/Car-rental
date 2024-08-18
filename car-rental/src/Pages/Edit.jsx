@@ -3,7 +3,6 @@ import { FaCar, FaTimes } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import { RentalContext } from '../Context/Context';
-import api from '../Axios/BaseURL';
 
 const Edit = () => {
   // FROM CONTEXT
@@ -16,8 +15,6 @@ const Edit = () => {
     setRentalCart,
     editReservation,
     setEditReservation,
-    // reservation,
-    // setReservation,
   } = useContext(RentalContext);
 
   const handleEditing = (e) => {
