@@ -47,16 +47,15 @@ const RentalContextProvider = (props) => {
 
   // DELETE RESERVATION
   const deleteReservation = (id) => {
-      const newReservation = reservation.filter(reservation => reservation.id !== id);
-      setReservation(newReservation)
+      const newReservation = rentalCart.filter(rentalCart => rentalCart.id !== id);
       setRentalCart(newReservation)
   }
 
   // CALCULATE PRICE
   const getPrice = () => {
     let costPrice = 0;
-    for (const carId in reservation) {
-      const rentItem = reservation[carId];
+    for (const carId in rentalCart) {
+      const rentItem = rentalCart[carId];
       costPrice += rentItem.rentPrice
     }
     return (costPrice / 100).toFixed(2)
@@ -86,11 +85,12 @@ const RentalContextProvider = (props) => {
     pickUpDate: '',
     dropOffDate: ''
   })
+  console.log(editReservation);
 
   // FUNCTION TO SHOW EDITING PAGE
   const handleEditReservation = (id) => {
     setShowEditPage(true)
-    const selectedReservation = reservation.find(reservation => reservation.id === id)
+    const selectedReservation = rentalCart.find(rentalCart => rentalCart.id === id)
     if (selectedReservation) {
       setEditReservation({...selectedReservation});
     }
@@ -119,6 +119,7 @@ const RentalContextProvider = (props) => {
     editReservation,
     setEditReservation
   }
+
   return(
     <RentalContext.Provider value={contextValue}>
       {props.children}

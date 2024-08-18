@@ -38,22 +38,21 @@ const Edit = () => {
       dropOffDate: editReservation.dropOffDate
     }
 
-      // Update the reservation state with the edited reservation
-      setRentalCart(prevCart => prevCart.map(reservation => reservation.id === id ? updatedReservation : reservation))
-      setEditReservation({
-        id: '',
-        selectCar: '',
-        pickUp: '',
-        dropOff: '',
-        pickUpDate: '',
-        dropOffDate: ''
-      })
-      // Close the edit page after submission
-      setShowEditPage(false)
+    // Update the reservation state with the edited reservation
+    setRentalCart(prevCart => prevCart.map(reservation => reservation.id === id ? updatedReservation : reservation))
+    setEditReservation({
+      id: '',
+      selectCar: '',
+      pickUp: '',
+      dropOff: '',
+      pickUpDate: '',
+      dropOffDate: ''
+    })
+    // Close the edit page after submission
+    setShowEditPage(false)
   }
   
   return (
-    <>
     <div className={`bg-white w-full lg:w-[36%] fixed h-[100vh] top-0 left-0 py-6 px-10 ${ showEditPage ? 'translate-x-0 duration-200' : '-translate-x-full duration-200'} ease-in-out  ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'}`}>
       <div className='mb-7 flex items-center justify-between'>
         <h4 className='text-2xl text-center font-bold text-primaryColor'>Edit Details</h4>
@@ -131,7 +130,6 @@ const Edit = () => {
           <button className='bg-primaryColor text-white h-[45px] mt-4' type='submit' onClick={(e) => EditReservation(editReservation.id)} >Change</button>
       </form>
     </div>
-    </>
   )
 }
 

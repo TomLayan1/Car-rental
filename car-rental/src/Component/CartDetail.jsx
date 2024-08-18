@@ -5,7 +5,7 @@ import { RentalContext } from '../Context/Context';
 
 
 const CartDetail = () => {
-  const { showEditPage, setShowEditPage} = useContext(RentalContext);
+  const { showEditPage } = useContext(RentalContext);
   return (
     <section>
       {showEditPage && <div className='fixed top-0 left-0 w-full h-[100vh] bg-grayBg'></div>}

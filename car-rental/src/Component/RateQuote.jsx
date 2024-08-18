@@ -20,15 +20,15 @@ const RateQuote = () => {
         <div className=''>
           <div className='flex justify-between mb-4'>
             <p className='font-bold'>Car Price</p>
-            <p className=''>${getPrice()}</p>
+            <p className=''>₦{getPrice()}</p>
           </div>
           <div className='flex justify-between mb-4'>
             <p className='font-bold'>Tax</p>
-            <p className=''>${getTax()}</p>
+            <p className=''>₦{getTax()}</p>
           </div>
           <div className='flex justify-between mb-4'>
             <p className='font-bold'>Total</p>
-            <p className=''>${getTotalPrice()}</p>
+            <p className=''>₦{getTotalPrice()}</p>
           </div>
         </div>
         <button className='bg-primaryColor text-white text-center w-full py-2 flex justify-center gap-1' onClick={payWithPayStack}>Book Car <RiSecurePaymentLine size={23} /></button>

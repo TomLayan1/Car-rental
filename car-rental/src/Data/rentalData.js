@@ -65,22 +65,8 @@ export const testimonials = [
     },
     {
       id: "3",
-      userImage: "https://cdn.pixabay.com/photo/2014/11/19/10/52/man-537136_1280.jpg",
-      userName: "Abraham Collins",
-      rating: "4",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst."
-    },
-    {
-      id: "4",
-      userImage: "https://cdn.pixabay.com/photo/2019/10/22/13/43/portrait-4568762_640.jpg",
-      userName: "Abraham Collins",
-      rating: "4",
-      comment: "Exceptional experience. The car was pristine, and the team was incredibly professional and accommodating. Can't wait to rent again!"
-    },
-    {
-      id: "5",
-      userImage: "https://cdn.pixabay.com/photo/2022/11/21/15/31/woman-7607347_1280.jpg",
-      userName: "Abraham Collins",
+      userImage: "https://i.pinimg.com/736x/c0/ef/11/c0ef11f9b018d3f730a8c2ca7ef69cf5.jpg",
+      userName: "Sevetri Wilson",
       rating: "4",
       comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst."
     }

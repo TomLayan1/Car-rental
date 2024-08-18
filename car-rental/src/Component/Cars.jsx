@@ -20,7 +20,7 @@ const Cars = () => {
           transition={{ duration: 0.5 }}
           key={car.id}
           className='shadow-customShadow p-2'>
-            <h3 className='text-xl text-end font-bold text-primaryColor'>${(car.rentPrice / 100).toFixed(2)}</h3>
+            <h3 className='text-xl text-end font-bold text-primaryColor'>₦{(car.rentPrice / 100).toFixed(2)}</h3>
             <div className='p-2 max-h-[200px] flex'>
               <img src={car.carImage} alt={car.carName} />
             </div>

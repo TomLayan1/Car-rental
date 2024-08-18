@@ -4,8 +4,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './Pages/Home'
 import Footer from './Component/Footer'
 import Cart from './Pages/Cart'
-import Edit from './Pages/Edit'
-import EditPage from './Pages/EditPage'
+import Edit from './Component/Edit'
 
 const App = () => {
 
@@ -15,8 +14,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/edit:id' element={<Edit />}  />
-            {/* <Route path='/editpage' element={<EditPage />} /> */}
+            {/* <Route path='/edit:id' element={<Edit />}  /> */}
           </Routes>
         <Footer />
         </BrowserRouter>
