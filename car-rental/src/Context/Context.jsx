@@ -36,6 +36,16 @@ const RentalContextProvider = (props) => {
     dropOffDate: ''
   })
 
+  // STATE TO EDIT RESERVATIONS
+  const [editReservation, setEditReservation] = useState({
+    id: '',
+    selectCar: '',
+    pickUp: '',
+    dropOff: '',
+    pickUpDate: '',
+    dropOffDate: ''
+  })
+
   // STATE TO SAVE RESERVATION
   const [reservation, setReservation] = useState([]);
 
@@ -76,16 +86,8 @@ const RentalContextProvider = (props) => {
     return totalPrice.toFixed(2)
   }
 
-  // STATE TO EDIT RESERVATIONS
-  const [editReservation, setEditReservation] = useState({
-    id: '',
-    selectCar: '',
-    pickUp: '',
-    dropOff: '',
-    pickUpDate: '',
-    dropOffDate: ''
-  })
-  console.log(editReservation);
+  // STATE TO SHOW PAYMENT FORM
+  const [paymentPopUp, setPaymentPopUp] = useState(false);
 
   // FUNCTION TO SHOW EDITING PAGE
   const handleEditReservation = (id) => {
@@ -113,6 +115,8 @@ const RentalContextProvider = (props) => {
     getPrice,
     getTax,
     getTotalPrice,
+    paymentPopUp,
+    setPaymentPopUp,
     showEditPage,
     setShowEditPage,
     handleEditReservation,

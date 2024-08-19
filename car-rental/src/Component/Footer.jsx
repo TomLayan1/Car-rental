@@ -15,13 +15,13 @@ const Footer = () => {
       <div className='text-[15px] mb-10 md:flex gap-20 lg:gap-40 px-6'>
         <div className='mb-8 w-full md:w-[50%] lg:w-[40%]'>
           <p className='mb-6'>Discover the ultimate in luxury vehicle rentals. Our commitment to excellence ensures every journey is unforgettable. Follow us on social media for the latest updates and exclusive offers.</p>
-          <p className='text-primaryColor text-justify'>CALL CENTER: +397 256 38 29</p>
+          <p className='text-primaryColor text-justify'>CALL CENTER: +234 814 418 0909</p>
         </div>
         <div className='w-[65%] lg:[65%]'>
           <div className='lg:flex md:gap-14 lg:gap-40'>
             <div>
               <h2 className='text-xl font-extrabold text-primaryColor mb-5'>Quick Link</h2>
-              <p className='mb-3'>How work</p>
+              <p className='mb-3'>How It work</p>
               <p className='mb-3'>FAQ</p>
               <p className='mb-3'>Services</p>
               <p className='mb-3'>Contact</p>

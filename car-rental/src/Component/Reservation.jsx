@@ -6,7 +6,7 @@ import { TiDelete } from "react-icons/ti";
 import { RentalContext } from '../Context/Context';
 
 const Reservation = () => {
-  
+
   // FROM CONTEXT
   const {
     rentalCart,
@@ -26,7 +26,7 @@ const Reservation = () => {
                 <img src={rentalCart.carImage} alt={rentalCart.selectCar} className='mb-3 w-[250px' />
                 <div className='flex items-center justify-between'>
                   <p className='font-semibold'>{rentalCart.selectCar}</p>
-                  <h5 className='text-primaryColor text-base font-semibold'>${(rentalCart.rentPrice / 100).toFixed(2)}</h5>
+                  <h5 className='text-primaryColor text-base font-semibold'>₦{(rentalCart.rentPrice / 100).toFixed(2)}</h5>
                 </div>
               </div>
             </div>
