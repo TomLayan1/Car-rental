@@ -3,15 +3,14 @@ import { FaCar, FaTimes } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import { RentalContext } from '../Context/Context';
+import { cars } from '../Data/rentalData';
 
 const Edit = () => {
   // FROM CONTEXT
   const {
-    luxCars,
     showEditPage,
     setShowEditPage,
     darkMode,
-    rentalCart,
     setRentalCart,
     editReservation,
     setEditReservation,
@@ -25,7 +24,7 @@ const Edit = () => {
 
   const EditReservation = (id) => {
     // Find selected car object based on the selected car name
-    const selectedCar = luxCars.find(car => car.carName === editReservation.selectCar);
+    const selectedCar = cars.find(car => car.carName === editReservation.selectCar);
 
     const updatedReservation = {
       id: id,
@@ -70,7 +69,7 @@ const Edit = () => {
           onChange={handleEditing}
           className='w-full text-[15px] p-2 border bg-orange-50 border-primaryColor outline-0  text-black'>
             <option>Selct car</option>
-            {luxCars.map(car => (
+            {cars.map(car => (
               <option key={car.carName} value={car.carName}>{car.carName}</option>
             ))}
           </select>

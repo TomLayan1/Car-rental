@@ -4,7 +4,7 @@ import blackSuv from '../Assets/Images/black-suv.png'
 
 const AboutUs = () => {
   return (
-    <section id='about' className='py-24 overflow-hidden'>
+    <section id='about-us' className='py-24 overflow-hidden'>
       <motion.h2
         initial={{ translateY: 140, scale: 0.5 }}
         whileInView={{ translateY: 0, scale: 1 }}

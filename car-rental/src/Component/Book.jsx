@@ -4,12 +4,12 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import { RentalContext } from '../Context/Context';
 import Progress from './Progress';
+import { cars } from '../Data/rentalData';
 
 const Book = () => {
 
   // FROM CONTEXT
   const {
-    luxCars,
     booking,
     setBooking,
     rentalCart,
@@ -29,7 +29,7 @@ const Book = () => {
   useEffect(() => {
     const timer = setTimeout(() => setNotification(null), 3000);
     return () => clearTimeout(timer);
-  }, [notification])
+  }, [notification, setNotification])
 
 
   // Validate booking before submission
@@ -49,7 +49,7 @@ const Book = () => {
     if (!validateBooking()) return;
 
     // Find selected car object based on the selected car name
-    const selectedCar = luxCars.find(car => car.carName === booking.selectCar);
+    const selectedCar = cars.find(car => car.carName === booking.selectCar);
 
     // Handle case where the selected car is not found
     if (!selectedCar) {
@@ -107,9 +107,9 @@ const Book = () => {
           name='selectCar'
           value={booking.selectCar}
           onChange={handleBooking}
-          className='w-full text-[15px] p-2 border bg-orange-50 border-primaryColor outline-0  text-black'>
+          className='w-full text-[15px] px-2 py-3 border bg-orange-50 border-primaryColor rounded-md outline-none  text-black'>
             <option>Selct car</option>
-            {luxCars.map(car => (
+            {cars.map(car => (
               <option key={car.carName} value={car.carName}>{car.carName}</option>
             ))}
           </select>
@@ -126,7 +126,7 @@ const Book = () => {
           value={booking.pickUp}
           onChange={handleBooking}
           placeholder='Location Here'
-          className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0 text-black' />
+          className='w-full text-[15px] px-2 py-3 bg-orange-50 border border-primaryColor rounded-md outline-none text-black' />
         </div>
 
         <div className=''>
@@ -139,7 +139,7 @@ const Book = () => {
           name='dropOff'
           value={booking.dropOff}
           onChange={handleBooking}
-          placeholder='Location Here' className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0 text-black' />
+          placeholder='Location Here' className='w-full text-[15px] px-2 py-3 bg-orange-50 border border-primaryColor rounded-md outline-none text-black' />
         </div>
 
         <div className=''>
@@ -152,7 +152,7 @@ const Book = () => {
           name='pickUpDate'
           value={booking.pickUpDate}
           onChange={handleBooking}
-          className='w-full text-[15px] p-2  bg-orange-50 border border-primaryColor outline-0  text-black' />
+          className='w-full text-[15px] px-2 py-3  bg-orange-50 border border-primaryColor rounded-md outline-none  text-black' />
         </div>
         <div className=''>
           <div  className='flex items-center gap-2 mb-2'>
@@ -164,10 +164,10 @@ const Book = () => {
           name='dropOffDate'
           value={booking.dropOffDate}
           onChange={handleBooking}
-          className='w-full text-[15px] p-2 bg-orange-50 border border-primaryColor outline-0  text-black' />
+          className='w-full text-[15px] px-2 py-3 bg-orange-50 border border-primaryColor rounded-md outline-none  text-black' />
         </div>
 
-          <button className='bg-primaryColor text-white h-[45px] mt-7' type='submit'>Submit</button>
+          <button className='bg-primaryColor text-white rounded-md h-[49px] mt-8' type='submit'>Submit</button>
       </form>
     </section>
   )

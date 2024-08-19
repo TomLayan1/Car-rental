@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { cars, testimonials } from "../Data/rentalData";
 
 export const RentalContext = createContext(null);
 
@@ -21,12 +20,6 @@ const RentalContextProvider = (props) => {
   // STATE TO SHOW EDITING PAGE
   const [showEditPage, setShowEditPage] = useState(false);
 
-  // STATE TO SAVE TESTIMOMIAL DATA
-  const [testimonial, setTestimonial] = useState(testimonials);
-
-  // STATE FOR CARS
-  const [luxCars, setLuxCars] = useState(cars);
-
   // STATE FOR STORING BOOKING DATA
   const [booking, setBooking] = useState({
     selectCar: '',
@@ -45,9 +38,6 @@ const RentalContextProvider = (props) => {
     pickUpDate: '',
     dropOffDate: ''
   })
-
-  // STATE TO SAVE RESERVATION
-  const [reservation, setReservation] = useState([]);
 
   // STATE FOR SHOWING NOTIFICATION
   const [notification, setNotification] = useState(null);
@@ -101,8 +91,6 @@ const RentalContextProvider = (props) => {
   const contextValue = {
     darkMode,
     setDarkMode,
-    testimonial,
-    luxCars,
     booking,
     setBooking,
     rentalCart,

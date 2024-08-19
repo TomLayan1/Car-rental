@@ -26,7 +26,7 @@ const Navbar = () => {
          initial={{ translateY: -50, opacity: 0 }}
          animate={{ translateY: 0, opacity: 1 }}
          transition={{ duration: 1.5 }}
-         className='font-bold text-2xl cursor-pointer text-primaryColor'>Drive<span className='text-grayLight'>Luxury</span></motion.h1>
+         className='font-bold text-2xl cursor-pointer text-primaryColor'><a href='#home'>Drive<span className='text-grayLight'>Luxury</span></a></motion.h1>
 
         <motion.nav
          initial={{ translateY: -50, opacity: 0 }}
@@ -34,11 +34,10 @@ const Navbar = () => {
          transition={{ duration: 1.5 }}
          className='hidden lg:flex lg:gap-6'>
           <a href='#home' className='list-none text-[14px] cursor-pointer'><li>Home</li></a>
-          <a href='#about' className='list-none text-[14px] cursor-pointer'><li>About Us</li></a>
+          <a href='#about-us' className='list-none text-[14px] cursor-pointer'><li>About Us</li></a>
           <a href='#vahicle-models' className='list-none text-[14px] cursor-pointer'><li>Vehicle Models</li></a>
           <a href='#testimonials' className='list-none text-[14px] cursor-pointer'><li>Testimonials</li></a>
-          <a className='list-none text-[14px] cursor-pointer'><li>Our Team</li></a>
-          <a className='list-none text-[14px] cursor-pointer'><li>Contact</li></a>
+          <a href='#contact' className='list-none text-[14px] cursor-pointer'><li>Contact</li></a>
         </motion.nav>
 
         <motion.div
@@ -48,7 +47,7 @@ const Navbar = () => {
          className='flex gap-8 items-center justify-between'>
           <div className='hidden lg:flex'>
             <button className='w-[70px] text-[12px] py-1 text-primaryColor cursor-pointer'>Sign In</button>
-            <button className='w-[70px] text-[12px] py-1 bg-gradient-to-tr from-orange-600 to-orange-300 text-white rounded-3xl rounded-tr-none cursor-pointer'>Register</button>
+            <button className='w-[70px] text-[12px] py-1 bg-primaryColor text-white rounded-md cursor-pointer'>Register</button>
           </div>
 
           <div onClick={()=>setDarkMode(!darkMode)} className='text-primaryColor text-[18px] cursor-pointer'>
@@ -72,36 +71,11 @@ const Navbar = () => {
           <button className='bg-primaryColor text-white font-semibold px-3 py-1'>REGISTER</button>
         </div>
         <nav className={`w-full overflow-hidden flex flex-col gap-5 font-semibold px-6 ${darkMode ? 'text-primaryColor' : 'text-primaryColor'}`}>
-          <motion.p
-           initial={{translateX: 300, opacity: 0  }}
-           animate={{ translateX: 0, opacity: 1 }}
-           transition={{ duration: 1.5, delay: 0.2 }}
-           className='list-none'>HOME</motion.p>
-          <motion.p
-           initial={{translateX: 300, opacity: 0 }}
-           animate={{ translateX: 0, opacity: 1 }}
-           transition={{ duration: 1.5, delay: 0.4 }}
-           className='list-none'>ABOUT</motion.p>
-          <motion.p
-           initial={{translateX: 300, opacity: 0 }}
-           animate={{ translateX: 0, opacity: 1 }}
-           transition={{ duration: 1.5, delay: 0.6 }}
-           className='list-none'>VEHICLE MODELS</motion.p>
-          <motion.p
-           initial={{translateX: 300, opacity: 0 }}
-           animate={{ translateX: 0, opacity: 1 }}
-           transition={{ duration: 1.5, delay: 0.8 }}
-           className='list-none'>TESTIMONIAL</motion.p>
-          <motion.p
-           initial={{translateX: 300, opacity: 0 }}
-           animate={{ translateX: 0, opacity: 1 }}
-           transition={{ duration: 1.5, delay: 1 }}
-           className='list-none'>OUR TEAM</motion.p>
-          <motion.p
-           initial={{translateX: 300, opacity: 0 }}
-           animate={{ translateX: 0, opacity: 1 }}
-           transition={{ duration: 1.5, delay: 1.2 }}
-           className='list-none'>CONTACT</motion.p>
+          <p onClick={() => setShowNav(false)} className='list-none'><a href='#home'>Home</a></p>
+          <p onClick={() => setShowNav(false)} className='list-none'><a href='#about-us'>About Us</a></p>
+          <p onClick={() => setShowNav(false)} className='list-none'><a href='#vehicle-models'>Vehicle Models</a></p>
+          <p onClick={() => setShowNav(false)} className='list-none'><a href='#testimonials'>Testimonials</a></p>
+          <p onClick={() => setShowNav(false)} className='list-none'><a href='#contact'>Contact</a></p>
         </nav>
       </div>
     </>

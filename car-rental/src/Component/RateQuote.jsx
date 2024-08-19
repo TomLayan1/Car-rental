@@ -6,7 +6,7 @@ const RateQuote = () => {
   const { getPrice, getTax, getTotalPrice, setPaymentPopUp } = useContext(RentalContext);
   
   return (
-    <div className='border border-gray-300 lg:w-[25%] h-[200px] lg:h-[200px] shadow-customShadow text-[15px]'>
+    <div className='border border-gray-300 lg:w-[30%] h-[200px] lg:h-[200px] shadow-customShadow text-[15px]'>
       <h3 className='font-bold text-black bg-gray-300 py-1 px-2 mb-2'>Rate Quote</h3>
       <div className=' px-2 flex flex-col justify-between'>
         <div className=''>

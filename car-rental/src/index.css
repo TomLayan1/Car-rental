@@ -4,12 +4,10 @@
 
 @layer utilities {
   .swiper-pagination-bullet {
-    /* Change bullet color */
-    @apply bg-orange-500;
+    background-color: #f97316;
   }
 
   .swiper-pagination-bullet-active {
-    /* Change active bullet color */
-    @apply bg-orange-700;
+    background-color: #f97316;
   }
 }

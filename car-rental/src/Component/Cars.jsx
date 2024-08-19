@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
-import { RentalContext } from '../Context/Context'
+import React from 'react'
+import { cars } from '../Data/rentalData'
 import { motion } from 'framer-motion'
 
 const Cars = () => {
-  // FROM CONTEXT
-  const { luxCars } = useContext(RentalContext);
 
   return (
     <section id='vahicle-models' className='py-20'>
@@ -13,7 +11,7 @@ const Cars = () => {
 
       <div
       className='grid md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-8 lg:gap-11 lg:w-[80%] mx-auto'>
-        {luxCars.map(car => (
+        {cars.map(car => (
           <motion.div
           initial={{ translateY: 200 }}
           whileInView={{ translateY: 0 }}

@@ -18,7 +18,6 @@ const Payment = () => {
     lastName: '',
     amount: amountToBePaid
   })
-  console.log(paymentForm)
 
   const handlePayment = (event) => {
     event.preventDefault();
@@ -53,7 +52,7 @@ const Payment = () => {
         alert(message);
       },
       onCancel(){
-        alert('Transaction Cancel ed')
+        alert('Transaction Canceled!')
       }
     })
 
@@ -61,13 +60,13 @@ const Payment = () => {
       email: '',
       firstName: '',
       lastName: '',
-      amount: ''
+      amount: '₦'
     })
     setPaymentPopUp(false)
   }
   return (
     <>
-      {paymentPopUp && <div className='bg-grayBg fixed top-0 left-0 w-full h-[100vh] flex items-center justify-center'>
+      {paymentPopUp && <div className='bg-grayBg text-black fixed top-0 left-0 w-full h-[100vh] flex items-center justify-center'>
         <div className='bg-white w-[40%] p-8'>
           <div className='flex items-center justify-between mb-9'>
             <h3 className='text-primaryColor text-2xl font-bold'>Complete Your Rental</h3>

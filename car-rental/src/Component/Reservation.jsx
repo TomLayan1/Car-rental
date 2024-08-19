@@ -15,9 +15,9 @@ const Reservation = () => {
   } = useContext(RentalContext);
 
   return (
-    <div className='flex flex-col lg:w-[75%] gap-10'>
+    <div className='flex flex-col lg:w-[70%] gap-10'>
       {rentalCart.map(rentalCart => (
-          <div key={rentalCart.id} className='flex flex-col lg:flex-row justify-between '>
+          <div key={rentalCart.id} className='flex flex-col lg:flex-row justify-between'>
 
             {/* SELETED CAR */}
             <div className='border border-gray-300 lg:w-[30%] shadow-customShadow'>
