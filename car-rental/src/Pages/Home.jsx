@@ -15,7 +15,7 @@ const Home = () => {
   const { darkMode } = useContext(RentalContext);
   
   return (
-    <div className={`${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
+    <div className={`${darkMode === 'dark' ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
       <Navbar />
       <Hero />
       <div className='px-6 md:px-16 lg:px-[100px]'>

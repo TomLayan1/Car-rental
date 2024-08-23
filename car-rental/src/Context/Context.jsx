@@ -5,7 +5,13 @@ export const RentalContext = createContext(null);
 const RentalContextProvider = (props) => {
 
   // STATE TO SELECT MODE
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem('darkMode') ? localStorage.getItem('darkMode') : 'light'
+  );
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', darkMode)
+  }, [darkMode])
 
   // STATE TO SAVE CART
   const [rentalCart, setRentalCart] = useState(() => {

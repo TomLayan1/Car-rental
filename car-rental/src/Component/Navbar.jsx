@@ -21,7 +21,7 @@ const Navbar = () => {
         <p className='text-center w-[88%] lg:w-[98%]'>{notification}</p>
         <FaTimes size={20} style={{ cursor: 'pointer' }} onClick={() => setNotification(null)} />
       </div>}
-      <div className={`w-full fixed top-0 left-0 z-50 flex items-center justify-between px-[12px] md:px-[30px] lg:px-[100px] py-5 ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
+      <div className={`w-full fixed top-0 left-0 z-50 flex items-center justify-between px-[12px] md:px-[30px] lg:px-[100px] py-5 ${darkMode === 'dark' ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
         <motion.h1
          initial={{ translateY: -50, opacity: 0 }}
          animate={{ translateY: 0, opacity: 1 }}
@@ -50,8 +50,8 @@ const Navbar = () => {
             <button className='w-[70px] text-[12px] py-1 bg-primaryColor text-white rounded-md cursor-pointer'>Register</button>
           </div>
 
-          <div onClick={()=>setDarkMode(!darkMode)} className='text-primaryColor text-[18px] cursor-pointer'>
-            { darkMode ? <IoSunnySharp style={{ color: 'white'}} /> : <FaMoon style={{ color: 'black'}} /> }
+          <div className='text-primaryColor text-[18px] cursor-pointer'>
+            { darkMode === 'dark' ? <IoSunnySharp onClick={()=>setDarkMode('light')} style={{ color: 'white'}} /> : <FaMoon onClick={()=>setDarkMode('dark')} style={{ color: 'black'}} /> }
           </div>
 
           {/* ICON TO SEE CART */}
