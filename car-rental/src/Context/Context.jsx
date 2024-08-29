@@ -64,14 +64,14 @@ const RentalContextProvider = (props) => {
       const rentItem = rentalCart[carId];
       costPrice += rentItem.rentPrice
     }
-    return (costPrice / 100).toFixed(2)
+    return costPrice
   }
 
   // CALCULATE TAX
   const getTax = () => {
     const costPrice = getPrice();
     const tax = Number(costPrice * 0.1);
-    return tax.toFixed(2)
+    return tax
   }
 
   // CALCULATE TOTAL PRICE
@@ -79,7 +79,7 @@ const RentalContextProvider = (props) => {
     const costPrice = getPrice();
     const tax = getTax();
     const totalPrice = Number(costPrice) + Number(tax)
-    return totalPrice.toFixed(2)
+    return totalPrice
   }
 
   // STATE TO SHOW PAYMENT FORM

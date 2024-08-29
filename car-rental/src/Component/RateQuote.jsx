@@ -12,15 +12,15 @@ const RateQuote = () => {
         <div className=''>
           <div className='flex justify-between mb-4'>
             <p className='font-bold'>Car Price</p>
-            <p className=''>₦{getPrice()}</p>
+            <p className=''>₦{(getPrice()).toLocaleString()}</p>
           </div>
           <div className='flex justify-between mb-4'>
             <p className='font-bold'>Tax</p>
-            <p className=''>₦{getTax()}</p>
+            <p className=''>₦{(getTax()).toLocaleString()}</p>
           </div>
           <div className='flex justify-between mb-4'>
             <p className='font-bold'>Total</p>
-            <p className=''>₦{getTotalPrice()}</p>
+            <p className=''>₦{(getTotalPrice()).toLocaleString()}</p>
           </div>
         </div>
         <button className='bg-primaryColor text-white text-center w-full py-2 flex justify-center gap-1' onClick={()=>setPaymentPopUp(true)}>Proceed To Payment</button>

@@ -15,7 +15,7 @@ const Reservation = () => {
   } = useContext(RentalContext);
 
   return (
-    <div className='flex flex-col lg:w-[70%] gap-10'>
+    <div className='flex flex-col lg:w-[70%] gap-10 min-h-[85vh]'>
       {rentalCart.map(rentalCart => (
           <div key={rentalCart.id} className='flex flex-col lg:flex-row justify-between'>
 
@@ -24,9 +24,9 @@ const Reservation = () => {
               <h3 className='font-bold text-black bg-gray-300 py-1 px-2'>Selected Vehicle</h3>
               <div className='p-2'>
                 <img src={rentalCart.carImage} alt={rentalCart.selectCar} className='mb-3 w-[250px' />
-                <div className='flex items-center justify-between'>
+                <div className='fle items-center justify-between'>
                   <p className='font-semibold'>{rentalCart.selectCar}</p>
-                  <h5 className='text-primaryColor text-base font-semibold'>₦{(rentalCart.rentPrice / 100).toFixed(2)}</h5>
+                  <h5 className='text-primaryColor text-base font-semibold'>₦{rentalCart.rentPrice.toLocaleString()}</h5>
                 </div>
               </div>
             </div>

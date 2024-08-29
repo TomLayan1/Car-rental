@@ -10,7 +10,7 @@ const Footer = () => {
   const { darkMode } = useContext(RentalContext)
 
   return (
-    <footer className={`pt-6 md:px-14 lg:px-[100px] ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
+    <footer className={`pt-6 md:px-14 lg:px-[100px] ${darkMode === 'dark' ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
       <h1 className='font-bold text-2xl cursor-pointer text-primaryColor mb-6 pl-6'>Drive<span className=' text-grayLight'>Luxury</span></h1>
       <div className='text-[15px] mb-10 md:flex gap-20 lg:gap-40 px-6'>
         <div className='mb-8 w-full md:w-[50%] lg:w-[40%]'>
