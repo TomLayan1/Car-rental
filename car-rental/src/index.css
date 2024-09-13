@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
-  .swiper-pagination-bullet {
-    background-color: #f97316;
-  }
-
-  .swiper-pagination-bullet-active {
+  .swiper-pagination .swiper-pagination-bullet {
     background-color: #f97316;
   }
 }

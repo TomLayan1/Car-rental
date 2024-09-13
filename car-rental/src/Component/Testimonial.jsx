@@ -11,8 +11,6 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 
-
-
 const Testimonial = () => {
 
   return (
@@ -44,20 +42,21 @@ const Testimonial = () => {
         >
           <div>
             {testimonials.map(testimonial => (
-              <SwiperSlide key={testimonial.id} className=''>
+              <SwiperSlide key={testimonial.id}>
                 <div className='text-[15px] w-full h-full px-6'>
                   <div className='flex gap-6 pt-3'>
-                    <div className='w-[120px] h-[120px]'>
+                    <div className='w-[100px] h-[100px]'>
                       <img className='w-full h-full rounded-full' src={testimonial.userImage} alt={testimonial.userName} />
                     </div>
                     <div>
-                      <h3 className='test-2xl font-bold mb-2 text-black'>{testimonial.userName}</h3>
+                      <p className='test-2xl font-bold text-black'>{testimonial.userName}</p>
+                      <p className='test-2xl mb-2 text-black'>{testimonial.occupation}</p>
                       <div className='text-primaryColor flex'>
-                        <IoStar size={20} />
-                        <IoStar size={20} />
-                        <IoStar size={20} />
-                        <IoStar size={20} />
-                        <IoStar size={20} />
+                        <IoStar size={18} />
+                        <IoStar size={18} />
+                        <IoStar size={18} />
+                        <IoStar size={18} />
+                        <IoStar size={18} />
                       </div>
                     </div>
                   </div>
@@ -72,7 +71,7 @@ const Testimonial = () => {
             ))}
           </div>
           <div className='swiper-pagination'>
-            <span className='swiper-pagination-bullet swiper-pagination-bullet'></span>
+            <span className='swiper-pagination-bullet'></span>
           </div>
         </Swiper>
       </motion.div>

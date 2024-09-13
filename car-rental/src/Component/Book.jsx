@@ -9,20 +9,11 @@ import { cars } from '../Data/rentalData';
 const Book = () => {
 
   // FROM CONTEXT
-  const {
-    booking,
-    setBooking,
-    rentalCart,
-    setRentalCart,
-    notification,
-    setNotification,
-    formNotification,
-    setFormNotification
-  } = useContext(RentalContext)
+  const { booking, setBooking, rentalCart, setRentalCart, notification, setNotification, formNotification, setFormNotification } = useContext(RentalContext)
 
   // FUNCTION TO HANDLE RESERVATION
-  const handleBooking = (event) => {
-    setBooking(prev => {return { ...prev, [event.target.name]: event.target.value}});
+  const handleBooking = (e) => {
+    setBooking(prev => {return { ...prev, [e.target.name]: e.target.value}});
   }
 
   // Auto-hide notification after 3 seconds
@@ -42,8 +33,8 @@ const Book = () => {
   }
 
   // FUNCTION TO MAKE RESERVITION
-  const makeReservation = async (event) => {
-    event.preventDefault();
+  const addItemToCart = (e) => {
+    e.preventDefault();
 
     // Validate before proceeding
     if (!validateBooking()) return;
@@ -51,17 +42,19 @@ const Book = () => {
     // Find selected car object based on the selected car name
     const selectedCar = cars.find(car => car.carName === booking.selectCar);
 
-    // Handle case where the selected car is not found
-    if (!selectedCar) {
-      setNotification('Selected car not found! Please choose a valid car.');
-      return;
-    }
-
     // Check if the selected car has already been reserved
-    const alreadyReserved = rentalCart.some(cart => cart.id === selectedCar.id);
+    const alreadyReserved = rentalCart.find(cart => cart.id === selectedCar.id);
 
     if (alreadyReserved) {
-      setNotification('This car has already been added to you reservation!')
+      setNotification('This car has been added to cart!')
+      setBooking({
+        selectCar: '',
+        pickUp: '',
+        dropOff: '',
+        pickUpDate: '',
+        dropOffDate: ''
+      })
+      return;
     }
 
     const newReservation = {
@@ -76,7 +69,7 @@ const Book = () => {
     }
 
     setRentalCart(prev => [...rentalCart, newReservation])
-    setNotification('Successfully Made Reservation')
+    setNotification('Successfully Added Item To Cart')
     setBooking({
       selectCar: '',
       pickUp: '',
@@ -91,13 +84,13 @@ const Book = () => {
     <section id='book' className='w-full lg:w-[90%] mx-auto py-9 md:py-12 lg:py-16'>
 
       <h1 className='text-3xl md:text-4xl text-primaryColor font-bold text-center mb-4'>Drive Your Dream Today</h1>
-      <p className='text-lg text-center mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
+      <p className=' md:text-lg text-center mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
 
       {/* Progress component */}
       <Progress />
 
       {formNotification && <p className='text-red-700 mb-3'>{formNotification}*</p>}
-      <form className='text-[15px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8' onSubmit={makeReservation}>
+      <form className='text-[15px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8' onSubmit={addItemToCart}>
         <div className=''>
           <div className='flex items-center gap-2  mb-2'>
             <FaCar size={20} style={{ color: '#fa7602'}} />

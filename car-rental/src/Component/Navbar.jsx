@@ -45,10 +45,6 @@ const Navbar = () => {
          animate={{ translateY: 0, opacity: 1 }}
          transition={{ duration: 1.5 }}
          className='flex gap-8 items-center justify-between'>
-          <div className='hidden lg:flex'>
-            <button className='w-[70px] text-[12px] py-1 text-primaryColor cursor-pointer'>Sign In</button>
-            <button className='w-[70px] text-[12px] py-1 bg-primaryColor text-white rounded-md cursor-pointer'>Register</button>
-          </div>
 
           <div className='text-primaryColor text-[18px] cursor-pointer'>
             { darkMode === 'dark' ? <IoSunnySharp onClick={()=>setDarkMode('light')} style={{ color: 'white'}} /> : <FaMoon onClick={()=>setDarkMode('dark')} style={{ color: 'black'}} /> }
@@ -65,11 +61,7 @@ const Navbar = () => {
       </div>
 
       {/* For mobile devices */}
-      <div className={`lg:hidden fixed top-[67px] right-0 h-[100vh] z-50 w-[70%] md:w-[50%] py-10 ${ showNav ? 'translate-x-0 duration-200' : 'translate-x-full duration-200'} ${darkMode ? 'bg-black duration-500' : 'bg-white duration-500'} ease-in-out`}>
-        <div className='flex gap-7 mb-7 px-6'>
-          <button className='bg-primaryColor text-white font-semibold px-3 py-1'>SIGN IN</button>
-          <button className='bg-primaryColor text-white font-semibold px-3 py-1'>REGISTER</button>
-        </div>
+      <div className={`lg:hidden fixed top-[67px] right-0 h-[100vh] z-50 w-full md:w-[50%] py-10 ${ showNav ? 'translate-x-0 duration-200' : 'translate-x-full duration-200'} ${darkMode === 'dark' ? 'bg-black duration-500' : 'bg-white duration-500'} ease-in-out`}>
         <nav className={`w-full overflow-hidden flex flex-col gap-5 font-semibold px-6 ${darkMode ? 'text-primaryColor' : 'text-primaryColor'}`}>
           <p onClick={() => setShowNav(false)} className='list-none'><a href='#home'>Home</a></p>
           <p onClick={() => setShowNav(false)} className='list-none'><a href='#about-us'>About Us</a></p>

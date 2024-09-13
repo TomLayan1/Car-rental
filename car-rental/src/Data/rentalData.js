@@ -1,9 +1,17 @@
+// Cars
 import bmw from '../Assets/Images/BMW-435i-Cabriolet-M-Sport-(F33).png'
 import lambo from '../Assets/Images/lamborghini-veneno.png'
 import lexus from '../Assets/Images/lexus-ls-500.png'
 import mercedes from '../Assets/Images/mercedes-amg-gt-r.png'
 import rollsRoys from '../Assets/Images/rolls-royce-dawn.png'
 import toyota from '../Assets/Images/Toyota-GR-86-Trompa.png'
+
+// People
+import lola from '../Assets/Images/lola-adeyemi.png'
+import adeola from '../Assets/Images/adeola-akinwale.png'
+import chiamaka from '../Assets/Images/chiamaka-okeke.png'
+import emeka from '../Assets/Images/emeka-udeh.png'
+import tunde from '../Assets/Images/tunde-balogun.png'
 
 
 
@@ -51,23 +59,42 @@ export const cars = [
 export const testimonials = [
     {
       id: "1",
-      userImage: "https://images.unsplash.com/photo-1564494874264-40e25538fef5?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      userName: "Abraham Collins",
+      userImage: adeola,
+      userName: "Adeola Akinwale",
+      occupation: "Entrepreneur",
       rating: "4",
-      comment: "I was blown away by the level of service and the quality of the car I rented from Drive luxury. It was a true luxury experience from start to finish."
+      comment: "The service was exceptional! I rented a luxury car for my business trip, and it exceeded all expectations. Professional staff and top-notch vehicles. Highly recommended!"
     },
     {
       id: "2",
-      userImage: "https://cdn.pixabay.com/photo/2022/05/05/01/13/woman-7175038_1280.jpg",
-      userName: "Dave Lee",
+      userImage: chiamaka,
+      userName: "Chiamaka Okeke",
+      occupation: "Event Planner",
       rating: "4",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst."
+      comment: "I rented a car for a high-profile event, and it was an absolute showstopper! The car was immaculate, and the process was so easy. Will definitely use their service again."
     },
     {
       id: "3",
-      userImage: "https://i.pinimg.com/736x/c0/ef/11/c0ef11f9b018d3f730a8c2ca7ef69cf5.jpg",
-      userName: "Sevetri Wilson",
+      userImage: lola,
+      userName: "Lola Adeyemi",
+      occupation: "Fashion Designer",
       rating: "4",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst."
+      comment: "Amazing service! The car was stunning, and it made my weekend getaway even more special. I’ll definitely be using them again for my next trip."
+    },
+    {
+      id: "4",
+      userImage: tunde,
+      userName: "Tunde Balogun",
+      occupation: "Real Estate Agent",
+      rating: "4",
+      comment: "Driving a luxury car from this service added that extra touch of class to my client meetings. The car was pristine, and the experience was smooth from start to finish."
+    },
+    {
+      id: "5",
+      userImage: emeka,
+      userName: "Emeka Udeh",
+      occupation: "Bank Executive",
+      rating: "4",
+      comment: "From booking to delivery, the service was seamless. The luxury car I rented was a pleasure to drive, and it made a lasting impression at my corporate event."
     }
   ]

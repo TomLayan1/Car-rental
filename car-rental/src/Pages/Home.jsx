@@ -20,13 +20,13 @@ const Home = () => {
       <Hero />
       <div className='px-6 md:px-16 lg:px-[100px]'>
         <HowItWorks />
-        <Book />
         <Cars />
+        <Book />
         <AboutUs />
       </div>
       <Testimonial />
       <Contact />
-      <div className='px-10 md:px-24 lg:px-100'>
+      <div className='px-6 md:px-16 lg:px-[120px]'>
         <MobileApp />
       </div>
       <hr className='mt-8' />

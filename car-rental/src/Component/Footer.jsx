@@ -29,9 +29,9 @@ const Footer = () => {
             <div>
               <p className='text-primaryColor mb-6'>official_driveluxury@gmail.com</p>
               <div className='text-primaryColor flex gap-3 md:gap-5'>
-                <FaInstagram size={20} />
-                <FaFacebookSquare size={20} />
-                <FaXTwitter size={20} />
+                <a href='instagram'><FaInstagram size={20} /></a>
+                <a href='facebook'><FaFacebookSquare size={20} /></a>
+                <a href='x'><FaXTwitter size={20} /></a>
               </div>
             </div>
           </div>

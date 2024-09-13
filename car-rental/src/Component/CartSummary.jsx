@@ -1,22 +1,40 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { FaPen } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import { TiDelete } from "react-icons/ti";
 import { RentalContext } from '../Context/Context';
+import lottie from 'lottie-web';
 
-const Reservation = () => {
+const CartSummary = () => {
 
   // FROM CONTEXT
-  const {
-    rentalCart,
-    deleteReservation,
-    handleEditReservation
-  } = useContext(RentalContext);
+  const { rentalCart, deleteCartItem, handleEditReservation } = useContext(RentalContext);
+
+  const emptyCart = useRef(null);
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: emptyCart.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../emptyCart.json')
+    })
+
+    // Cleanup to prevent multiple animation
+    return () => {
+     lottie.destroy(); 
+    }
+  }, [])
+
+
 
   return (
     <div className='flex flex-col lg:w-[70%] gap-10 min-h-[85vh]'>
-      {rentalCart.map(rentalCart => (
+      {rentalCart.length === 0 ? 
+      <div ref={emptyCart} className='w-[50%] place-self-center'></div>
+      :
+      rentalCart.map(rentalCart => (
           <div key={rentalCart.id} className='flex flex-col lg:flex-row justify-between'>
 
             {/* SELETED CAR */}
@@ -59,7 +77,7 @@ const Reservation = () => {
                   </div>
                   <div className='mb-4 md:w-[50%]'>
                     <div className='flex items-center gap-1 mb-2'>
-                      <MdDateRange size={16} style={{ color: '#fa7602'}} />
+                      <MdDateRange size={16} style={{ color: '#fa7602' }} />
                       <p className='font-bold'>Dropoff Date</p>
                     </div>
                     <p className='pl-6'>{rentalCart.dropOffDate}</p>
@@ -71,7 +89,7 @@ const Reservation = () => {
                     <FaPen size={16} style={{ color: '#fa7602' }} />
                     <p className='font-bold underline' onClick={()=>handleEditReservation(rentalCart.id)}>Edit</p>
                   </div>
-                  <TiDelete size={24} style={{ color: 'red',cursor: 'pointer'}} onClick={() => deleteReservation(rentalCart.id)} />
+                  <TiDelete size={24} style={{ color: 'red',cursor: 'pointer'}} onClick={() => deleteCartItem(rentalCart.id)} />
                 </div>
               </div>
             </div>
@@ -82,4 +100,4 @@ const Reservation = () => {
   )
 }
 
-export default Reservation
+export default CartSummary

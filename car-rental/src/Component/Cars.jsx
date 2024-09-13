@@ -7,7 +7,7 @@ const Cars = () => {
   return (
     <section id='vahicle-models' className='py-20'>
       <h2 className='text-3xl md:text-4xl text-primaryColor text-center font-extrabold mb-5'>Our Fleet Of Cars</h2>
-      <p className='text-lg text-center mb-20 md:w-[60%] mx-auto'>Explore our exceptional collection of luxury vehicles, meticulously selected to deliver unparalleled performance and style.</p>
+      <p className='md:text-lg text-center mb-20 md:w-[60%] mx-auto'>Explore our exceptional collection of luxury vehicles, meticulously selected to deliver unparalleled performance and style.</p>
 
       <div
       className='grid md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-8 lg:gap-11 lg:w-[80%] mx-auto'>

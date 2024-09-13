@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './Pages/Home'
 import Footer from './Component/Footer'
 import Cart from './Pages/Cart'
+import Reservation from './Pages/Reservation'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/reservation' element={<Reservation />} />
           </Routes>
         <Footer />
         </BrowserRouter>

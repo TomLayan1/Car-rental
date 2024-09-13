@@ -23,6 +23,16 @@ const RentalContextProvider = (props) => {
     localStorage.setItem('rentalCart', JSON.stringify(rentalCart));
   }, [rentalCart])
 
+  const [reservation, setReservation] = useState(() => {
+    const savedReservation = localStorage.getItem('reservation');
+    return savedReservation ? JSON.parse(savedReservation) : [];
+  })
+  console.log(reservation)
+
+  useEffect(() => {
+    localStorage.setItem('reservation', JSON.stringify(reservation));
+  }, [reservation])
+
   // STATE TO SHOW EDITING PAGE
   const [showEditPage, setShowEditPage] = useState(false);
 
@@ -48,13 +58,20 @@ const RentalContextProvider = (props) => {
   // STATE FOR SHOWING NOTIFICATION
   const [notification, setNotification] = useState(null);
 
+  // Auto-hide notification after 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setNotification(''), 3000)
+    return () => clearTimeout(timer)
+  }, [notification])
+
   // STATE FOR SHOW FORM VALIDATION
   const [formNotification, setFormNotification] = useState(null);
 
   // DELETE RESERVATION
-  const deleteReservation = (id) => {
-      const newReservation = rentalCart.filter(rentalCart => rentalCart.id !== id);
-      setRentalCart(newReservation)
+  const deleteCartItem = (id) => {
+      const newCart = rentalCart.filter(rentalCart => rentalCart.id !== id);
+      setRentalCart(newCart)
+      setNotification('Item Removed From Cart')
   }
 
   // CALCULATE PRICE
@@ -105,7 +122,7 @@ const RentalContextProvider = (props) => {
     setNotification,
     formNotification,
     setFormNotification,
-    deleteReservation,
+    deleteCartItem,
     getPrice,
     getTax,
     getTotalPrice,
@@ -115,7 +132,9 @@ const RentalContextProvider = (props) => {
     setShowEditPage,
     handleEditReservation,
     editReservation,
-    setEditReservation
+    setEditReservation,
+    reservation,
+    setReservation
   }
 
   return(

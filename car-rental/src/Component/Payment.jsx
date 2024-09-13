@@ -7,7 +7,7 @@ import PaystackPop from '@paystack/inline-js'
 
 const Payment = () => {
   // FROM CONTEXT
-  const { getTotalPrice, paymentPopUp, setPaymentPopUp } = useContext(RentalContext);
+  const { getTotalPrice, paymentPopUp, setPaymentPopUp, rentalCart, setRentalCart, setNotification, setReservation } = useContext(RentalContext);
 
   const [paymentNotification, setPaymentNotification] = useState(null);
 
@@ -50,6 +50,13 @@ const Payment = () => {
     onSuccess(transaction) {
       let message = `Payment Complete! Reference ${transaction.reference}`;
       alert(message);
+
+      // Clear rentalCart after successful payment
+      setRentalCart([]);
+
+      setNotification('Cart Emptied. Check Reservation.')
+      
+      setReservation(order => [...order, ...rentalCart])
     },
     onCancel(){
       alert('Transaction Canceled!')
@@ -68,7 +75,7 @@ const Payment = () => {
   return (
     <>
       {paymentPopUp && <div className='bg-grayBg text-black fixed top-0 left-0 w-full h-[100vh] flex items-center justify-center'>
-        <div className='bg-white w-[40%] p-8'>
+        <div className='bg-white w-[89%] md:w-[50%] lg:w-[40%] p-8'>
           <div className='flex items-center justify-between mb-9'>
             <h3 className='text-primaryColor text-2xl font-bold'>Complete Your Rental</h3>
             <FaTimes size={19} style={{ color: 'grey', cursor: 'pointer'}} onClick={() => setPaymentPopUp(false)} />
@@ -99,7 +106,6 @@ const Payment = () => {
             <div className='border border-primaryColor p-2 mb-5'>
               <p className='w-full text-[15px]'>₦{(paymentForm.amount).toLocaleString()}</p>
             </div>
-
             <button className='bg-primaryColor p-2 w-full text-white cursor-pointer flex items-center justify-center gap-1' type='submit' onClick={payWithPayStack}>Pay <RiSecurePaymentLine size={23} /></button>
           </form>
         </div>
