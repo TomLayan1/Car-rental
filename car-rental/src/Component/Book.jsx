@@ -81,87 +81,88 @@ const Book = () => {
 
   
   return (
-    <section id='book' className='w-full lg:w-[90%] mx-auto py-9 md:py-12 lg:py-16'>
+    <section id='book' className='py-12 pb-16 md:py-14 md:pb-14 lg:py-28 lg:pb-28'>
+      <div className='container lg:w-[85%]'>
+        <h1 className='text-3xl md:text-4xl text-primaryColor font-bold text-center mb-4'>Drive Your Dream Today</h1>
+        <p className=' md:text-lg text-center mb-6 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
 
-      <h1 className='text-3xl md:text-4xl text-primaryColor font-bold text-center mb-4'>Drive Your Dream Today</h1>
-      <p className=' md:text-lg text-center mb-16 lg:w-[60%] mx-auto'>Select Your Luxury Ride and Reserve It Now! Limited Availability, Book Your Experience Before It's Gone!</p>
+        {/* Progress component */}
+        <Progress />
 
-      {/* Progress component */}
-      <Progress />
-
-      {formNotification && <p className='text-red-700 mb-3'>{formNotification}*</p>}
-      <form className='text-[15px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8' onSubmit={addItemToCart}>
-        <div className=''>
-          <div className='flex items-center gap-2  mb-2'>
-            <FaCar size={20} style={{ color: '#fa7602'}} />
-            <p>Select car Type</p>
+        {formNotification && <p className='text-red-700 mb-3'>{formNotification}*</p>}
+        <form className='text-[15px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8' onSubmit={addItemToCart}>
+          <div className=''>
+            <div className='flex items-center gap-2  mb-2'>
+              <FaCar size={20} style={{ color: '#fa7602'}} />
+              <p>Select car Type</p>
+            </div>
+            <select
+            name='selectCar'
+            value={booking.selectCar}
+            onChange={handleBooking}
+            className='w-full text-[15px] px-2 py-3 border bg-orange-50 border-primaryColor rounded-md outline-none  text-black'>
+              <option>Selct car</option>
+              {cars.map(car => (
+                <option key={car.carName} value={car.carName}>{car.carName}</option>
+              ))}
+            </select>
           </div>
-          <select
-          name='selectCar'
-          value={booking.selectCar}
-          onChange={handleBooking}
-          className='w-full text-[15px] px-2 py-3 border bg-orange-50 border-primaryColor rounded-md outline-none  text-black'>
-            <option>Selct car</option>
-            {cars.map(car => (
-              <option key={car.carName} value={car.carName}>{car.carName}</option>
-            ))}
-          </select>
-        </div>
 
-        <div className=''>
-          <div className='flex items-center gap-2 mb-2'>
-            <FaLocationDot size={20} style={{ color: '#fa7602'}} />
-            <p>Pickup Location</p>
+          <div className=''>
+            <div className='flex items-center gap-2 mb-2'>
+              <FaLocationDot size={20} style={{ color: '#fa7602'}} />
+              <p>Pickup Location</p>
+            </div>
+            <input
+            type='text'
+            name='pickUp'
+            value={booking.pickUp}
+            onChange={handleBooking}
+            placeholder='Location Here'
+            className='w-full text-[15px] px-2 py-3 bg-orange-50 border border-primaryColor rounded-md outline-none text-black' />
           </div>
-          <input
-          type='text'
-          name='pickUp'
-          value={booking.pickUp}
-          onChange={handleBooking}
-          placeholder='Location Here'
-          className='w-full text-[15px] px-2 py-3 bg-orange-50 border border-primaryColor rounded-md outline-none text-black' />
-        </div>
 
-        <div className=''>
-          <div className='flex items-center gap-2 mb-2'>
-            <FaLocationDot size={20} style={{ color: '#fa7602'}} />
-            <p>Dropoff Location</p>
+          <div className=''>
+            <div className='flex items-center gap-2 mb-2'>
+              <FaLocationDot size={20} style={{ color: '#fa7602'}} />
+              <p>Dropoff Location</p>
+            </div>
+            <input 
+            type='text'
+            name='dropOff'
+            value={booking.dropOff}
+            onChange={handleBooking}
+            placeholder='Location Here' className='w-full text-[15px] px-2 py-3 bg-orange-50 border border-primaryColor rounded-md outline-none text-black' />
           </div>
-          <input 
-          type='text'
-          name='dropOff'
-          value={booking.dropOff}
-          onChange={handleBooking}
-          placeholder='Location Here' className='w-full text-[15px] px-2 py-3 bg-orange-50 border border-primaryColor rounded-md outline-none text-black' />
-        </div>
 
-        <div className=''>
-          <div  className='flex items-center gap-2 mb-2'>
-            <MdDateRange size={20} style={{ color: '#fa7602'}} />
-            <p>Pickup Date</p>
+          <div className=''>
+            <div  className='flex items-center gap-2 mb-2'>
+              <MdDateRange size={20} style={{ color: '#fa7602'}} />
+              <p>Pickup Date</p>
+            </div>
+            <input
+            type='date'
+            name='pickUpDate'
+            value={booking.pickUpDate}
+            onChange={handleBooking}
+            className='w-full text-[15px] px-2 py-3  bg-orange-50 border border-primaryColor rounded-md outline-none  text-black' />
           </div>
-          <input
-          type='date'
-          name='pickUpDate'
-          value={booking.pickUpDate}
-          onChange={handleBooking}
-          className='w-full text-[15px] px-2 py-3  bg-orange-50 border border-primaryColor rounded-md outline-none  text-black' />
-        </div>
-        <div className=''>
-          <div  className='flex items-center gap-2 mb-2'>
-            <MdDateRange size={20} style={{ color: '#fa7602'}} />
-            <p>Dropoff Date</p>
+          <div className=''>
+            <div  className='flex items-center gap-2 mb-2'>
+              <MdDateRange size={20} style={{ color: '#fa7602'}} />
+              <p>Dropoff Date</p>
+            </div>
+            <input 
+            type='date'
+            name='dropOffDate'
+            value={booking.dropOffDate}
+            onChange={handleBooking}
+            className='w-full text-[15px] px-2 py-3 bg-orange-50 border border-primaryColor rounded-md outline-none  text-black' />
           </div>
-          <input 
-          type='date'
-          name='dropOffDate'
-          value={booking.dropOffDate}
-          onChange={handleBooking}
-          className='w-full text-[15px] px-2 py-3 bg-orange-50 border border-primaryColor rounded-md outline-none  text-black' />
-        </div>
 
-          <button className='bg-primaryColor text-white rounded-md h-[49px] mt-8' type='submit'>Submit</button>
-      </form>
+            <button className='bg-primaryColor text-white rounded-md h-[49px] mt-8' type='submit'>Submit</button>
+        </form>
+      </div>
     </section>
   )
 }

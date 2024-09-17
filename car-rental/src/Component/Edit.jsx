@@ -52,9 +52,9 @@ const Edit = () => {
   }
   
   return (
-    <div className={`bg-white w-full md:w-[60%] lg:w-[36%] fixed h-[100vh] top-0 left-0 py-6 px-10 ${ showEditPage ? 'translate-x-0 duration-200' : '-translate-x-full duration-200'} ease-in-out  ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'}`}>
+    <div className={`bg-white w-full md:w-[50%] lg:w-[36%] fixed h-[100vh] top-0 left-0 py-6 px-10 ${ showEditPage ? 'translate-x-0 duration-200' : '-translate-x-full duration-200'} ease-in-out  ${darkMode ? 'bg-darkTheme text-white' : 'bg-white text-black'}`}>
       <div className='mb-7 flex items-center justify-between'>
-        <h4 className='text-2xl text-center font-bold text-primaryColor'>Edit Details</h4>
+        <h4 className='text-xl md:text-2xl text-center font-bold text-primaryColor'>Edit Details</h4>
         <FaTimes size={19} style={{ color: 'grey', cursor: 'pointer'}} onClick={() => setShowEditPage(false)} />
       </div>
       <form className='text-[15px] grid grid-cols-1 gap-4 md:gap-4'>

@@ -15,21 +15,19 @@ const Home = () => {
   const { darkMode } = useContext(RentalContext);
   
   return (
-    <div className={`${darkMode === 'dark' ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
+    <div className={` ${darkMode === 'dark' ? 'bg-darkTheme text-white' : 'bg-white text-black'} duration-500`}>
       <Navbar />
       <Hero />
-      <div className='px-6 md:px-16 lg:px-[100px]'>
-        <HowItWorks />
-        <Cars />
-        <Book />
-        <AboutUs />
-      </div>
+      <HowItWorks />
+      <hr />
+      <Cars />
+      <hr />
+      <Book />
+      <hr />
+      <AboutUs />
       <Testimonial />
       <Contact />
-      <div className='px-6 md:px-16 lg:px-[120px]'>
-        <MobileApp />
-      </div>
-      <hr className='mt-8' />
+      <MobileApp />
     </div>
   )
 }

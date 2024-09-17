@@ -10,14 +10,16 @@ const App = () => {
 
   return (
       <RentalContextProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/reservation' element={<Reservation />} />
-          </Routes>
-        <Footer />
-        </BrowserRouter>
+        <div className='w-full max-h-[100vh] overflow-y-scroll scrollBar scroll-smooth'>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/reservation' element={<Reservation />} />
+            </Routes>
+          <Footer />
+          </BrowserRouter>
+        </div>
       </RentalContextProvider>
   )
 }

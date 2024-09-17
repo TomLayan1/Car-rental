@@ -4,18 +4,20 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '1024px'
-    },
     extend: {
       colors: {
         primaryColor: '#fa7602',
         darkTheme: '#151515',
         grayLight: '#424242',
         grayBg: '#0000003f',
-        contactBg: '#00000088'
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          md: '2rem',
+          sm:'3rem'
+        }
       },
       boxShadow: {
         customShadow: '0 0px 9px rgba(0, 0, 0, 0.3)',

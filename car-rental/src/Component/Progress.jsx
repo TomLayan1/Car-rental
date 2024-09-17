@@ -1,7 +1,5 @@
 import React, { useContext } from 'react'
-import { PiNumberCircleOneFill, PiNumberCircleTwoFill, PiNumberCircleThreeFill, PiNumberCircleFourFill, PiNumberCircleFiveFill } from "react-icons/pi";
-import { FaCar } from "react-icons/fa";
-import { RiCustomerService2Fill } from "react-icons/ri";
+import { PiNumberCircleOneFill, PiNumberCircleTwoFill, PiNumberCircleThreeFill } from "react-icons/pi";
 import { RentalContext } from '../Context/Context';
 
 

@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer utilities {
+  .scrollBar::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .scrollBar::-webkit-scrollbar-track {
+    background-color: #ffffff;
+  }
+
+  .scrollBar::-webkit-scrollbar-thumb {
+    background-color: #f97316;
+  }
   .swiper-pagination .swiper-pagination-bullet {
     background-color: #f97316;
   }

@@ -7,7 +7,8 @@ import { FaCar } from "react-icons/fa";
 const HowItWorks = () => {
 
   return (
-    <div className=' lg:w-[80%] mx-auto py-10 lg:py-24'>
+    <div className='py-12 pb-16 md:py-20 md:pb-14 lg:py-28 lg:pb-28'>
+      <div className='container lg:w-[85%] mx-auto'>
         <motion.h2
           initial={{ translateY: 200, opacity: 0 }}
           whileInView={{ translateY: 0, opacity: 1 }}
@@ -22,7 +23,7 @@ const HowItWorks = () => {
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
             <FaCar size={32} style={{color: '#fa7602'}}  />
             <h4 className='text-lg text-black font-semibold'>Book Your Car</h4>
-            <p className='text-[13px] text-black text-center'> Browse our selection of luxury vehicles, select your preferred model, and complete your booking.</p>
+            <p className='text-[14px] text-black text-center'> Browse our selection of luxury vehicles, select your preferred model, and complete your booking.</p>
           </motion.div>
 
           <motion.div
@@ -32,7 +33,7 @@ const HowItWorks = () => {
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
             <FaLocationDot size={32} style={{color: '#fa7602'}} />
             <h4 className='text-lg text-black text-center font-semibold'>Choose a Location</h4>
-            <p className='text-[13px] text-black text-center'>Select your desired pick-up location from our wide network of convenient spots.</p>
+            <p className='text-[14px] text-black text-center'>Select your desired pick-up location from our wide network of convenient spots.</p>
           </motion.div>
 
           <motion.div
@@ -42,9 +43,10 @@ const HowItWorks = () => {
             className='w-[100%] bg-gradient-to-b from-white to-orange-100 p-4 flex flex-col gap-4 items-center'>
             <AiFillSchedule size={32} style={{color: '#fa7602'}}  />
             <h4 className='text-lg text-black font-semibold'>Pick A Date</h4>
-            <p className='text-[13px] text-black text-center'>Choose the pick-up date that suits your schedule for a seamless rental experience.</p>
+            <p className='text-[14px] text-black text-center'>Choose the pick-up date that suits your schedule for a seamless rental experience.</p>
           </motion.div>
         </div>
+      </div>
     </div>
   )
 }

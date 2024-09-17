@@ -75,9 +75,9 @@ const Payment = () => {
   return (
     <>
       {paymentPopUp && <div className='bg-grayBg text-black fixed top-0 left-0 w-full h-[100vh] flex items-center justify-center'>
-        <div className='bg-white w-[89%] md:w-[50%] lg:w-[40%] p-8'>
+        <div className='bg-white w-[89%] md:w-[50%] lg:w-[40%] p-5 md:p-8'>
           <div className='flex items-center justify-between mb-9'>
-            <h3 className='text-primaryColor text-2xl font-bold'>Complete Your Rental</h3>
+            <h3 className='text-primaryColor text-xl md:text-2xl font-bold'>Enter Details</h3>
             <FaTimes size={19} style={{ color: 'grey', cursor: 'pointer'}} onClick={() => setPaymentPopUp(false)} />
           </div>
           {paymentNotification && <p className='text-red-700'>{paymentNotification}*</p>}

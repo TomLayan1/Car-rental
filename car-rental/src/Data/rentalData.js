@@ -21,37 +21,37 @@ export const cars = [
     id: '1',
     carName: 'BMW 435i Cabriolet M Sport (F33)',
     carImage: bmw,
-    rentPrice: 300000
+    rentPrice: 30000
   },
   {
     id: '2',
     carName: 'Lamborghini Veneno',
     carImage: lambo,
-    rentPrice: 2250000
+    rentPrice: 50000
   },
   {
     id: '3',
     carName: 'Lexus-LS-500',
     carImage: lexus,
-    rentPrice: 270000
+    rentPrice: 70000
   },
   {
     id: '4',
     carName: 'Rolls Royce Dawn',
     carImage: rollsRoys,
-    rentPrice: 3000000
+    rentPrice: 100000
   },
   {
     id: '5',
     carName: 'Toyota-GR-86-Trompa',
     carImage: toyota,
-    rentPrice: 2037500
+    rentPrice: 80000
   },
   {
     id: '6',
     carName: 'Mercedes AMG GTR',
     carImage: mercedes,
-    rentPrice: 3877500
+    rentPrice: 90000
   }
 ]
 
