@@ -26,45 +26,34 @@ Follow these steps to set up and run the project locally:
 
 - **Node.js:** Ensure you have Node.js installed. Download it from [nodejs.org](https://nodejs.org/).
 
-### Installation
+### Create React App
 
-1. **Clone the Repository:**
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-   ```bash
-   git clone https://github.com/TomLayan1/Car-rental.git
-   ```
+### Available Scripts
 
-2. **Navigate to the Project Directory:**
+In the project directory, you can run:
 
-   ```bash
-   cd Car-rental/car-rental
-   ```
+### `npm start`
 
-3. **Install Dependencies:**
+Runs the app in development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-   ```bash
-   npm install
-   ```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Running the Application
+### `npm test`
 
-To start the development server:
+Launches the test runner in interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```bash
-npm start
-```
+### `npm run build`
 
-This command will launch the app in development mode. Open [http://localhost:3000](http://localhost:3000) in your browser to view it. The page will reload if you make edits, and you will see any lint errors in the console.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Building for Production
-
-To create a production build:
-
-```bash
-npm run build
-```
-
-This will generate a `build` folder containing the optimized app, ready for deployment.
+The build is minified, and the filenames include the hashes.\
+Your app is ready to be deployed!
 
 ## Project Structure
 
